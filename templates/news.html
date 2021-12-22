@@ -1,0 +1,248 @@
+ {%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- подключение Css -->
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <!-- подключение Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- подключение Box-icons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- подключение Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!--подключение Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <title>JIHC offical site</title>
+</head>
+
+<body>
+
+    <!-- Navbar start -->
+    <section class="navbar">
+        <div class="container">
+            <div class="header__body">
+                <div class="navbar_top">
+                    <div class="navbar_logo">
+                        <a href="index.html">
+                            <img src="{% static 'img/header_Logo.svg'%}" alt="">
+                        </a>
+                    </div>
+                    <div class="navbar_burger">
+                        <span></span>
+                    </div>
+                </div>
+                <ul class="navbar_nav">
+                    <li class="navbar_nav-list">
+                        <a href="{% url 'index'%}" class="navbar_nav-link ">
+                        Басты
+                    </a>
+                    </li>
+                    <li class="navbar_nav-list">
+                        <a href="{% url 'news'%}" class="navbar_nav-link active">
+                        Жаңалықтар
+                    </a>
+                    </li>
+                    <li class="navbar_nav-list">
+                        <a href="{% url 'about'%}" class="navbar_nav-link">
+                        Біз туралы
+                    </a>
+                    </li>
+                    <li class="navbar_nav-list dropdown">
+                        <a href="{% url 'talapker'%}" class="navbar_nav-link">
+                        Талапкерге
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                        <span class="hidden"><i class="fas fa-plus"></i></span>
+
+                        <ul class="navbar_sub-nav">
+                            {% for el in dropdown%}
+                            <li class="navbar_sub_nav-list">
+                                <a href="{% url 'talapker_detail'  el.slug %}" class="navbar_sub_nav-link">
+                                {{el.title}}
+                            </a>
+                            </li>
+                            {% endfor%}
+
+                        </ul>
+                    </li>
+                    <li class="navbar_nav-list dropdown">
+                        <a href="{% url 'student'%}" class="navbar_nav-link">
+                        Студенттерге
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                        <span class="hidden"><i class="fas fa-plus"></i></span>
+
+                        <ul class="navbar_sub-nav">
+                            <li class="navbar_sub_nav-list">
+                                <a href="{% url 'profession'%}" class="navbar_sub_nav-link">
+                                Студенттік өмір
+                            </a>
+                            </li>
+                            <li class="navbar_sub_nav-list">
+                                <a href="{% url 'kodeks'%}" class="navbar_sub_nav-link">
+                                Ар-намыс кодексі
+                            </a>
+                            </li>
+                            <li class="navbar_sub_nav-list">
+                                <a href="{% url 'for_parent'%}">
+                                Ата-аналарға
+                            </a>
+                            </li>
+                            <li class="navbar_sub_nav-list">
+                                <a href="{% url 'profession'%}" class="navbar_sub_nav-link">
+                                Үйірмелер
+                            </a>
+                            </li>
+                            <li class="navbar_sub_nav-list">
+                                <a href="{% url 'profession'%}" class="navbar_sub_nav-link">
+                                Еріктілер
+                            </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navbar_nav-list">
+                        <a href="{% url 'gallery'%}" class="navbar_nav-link">
+                        Галерея
+                    </a>
+                    </li>
+                    <li class="navbar_nav-list">
+                        <a href="{% url 'contact'%}" class="navbar_nav-link">
+                        Байланыс
+                    </a>
+                    </li>
+                    <li class="navbar_nav-list">
+                        <a href="{% url 'calendar'%}" class="navbar_nav-link">
+                        Күнтізбе
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header start -->
+    <header class="header" style="  background: url(/static/img/header_bg.svg); background-repeat: no-repeat; background-size: cover;">
+        <div class="container">
+            <div class="header__body">
+                <div class="header_title">
+                    <h2>ЖАНАЛЫҚТАР</h2>
+                </div>
+                <div class="header_subtitle">
+                    <span class="header_subtitle-italic">JIHC</span> / Жаналықтар
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main_news_wrapper">
+        <div class="container">
+            <div class="main_news_inner">
+                <aside class="main_news_sidebar">
+                    <div class="dropbtn">
+                        <div class="archive_menu">
+                            <button class="btn"><p>Мұрағат</p> <img src="{% static 'img/menu_img.svg'%}"></button>
+                            <div id="dropdown" class="menu">
+                                <nav class="menu_drop">
+                                    <li><a href="">Қаңтар 2021</a></li>
+                                    <li><a href="">Ақпан 2021</a></li>
+                                    <li><a href="">Наурыз 2021</a></li>
+                                    <li><a href="">Сәуір 2021</a></li>
+                                    <li><a href="">Мамыр 2021</a></li>
+                                    <li><a href="">Маусым 2021</a></li>
+                                    <li><a href="">Шілде 2021</a></li>
+                                    <li><a href="">Тамыз 2021</a></li>
+                                    <li><a href="">Қыркүйек 2021</a></li>
+                                    <li><a href="">Қазан 2021</a></li>
+                                    <li><a href="">Қараша 2021</a></li>
+                                    <li><a href="">Желтоқсан 2021</a></li>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                </aside>
+                <div class="main_news_content">
+                    {%for el in newsPost%}
+                    <div class="news_single_block">
+                        <div class="news_single_block_header">
+                            <div class="news_single_header-img">
+                                <img src="{{el.img.url}}" alt="">
+                            </div>
+                            <div class="news_single_header-desc">
+                                <h3 class="news_single_desc-title">
+                                    {{el.title}}
+                                </h3>
+                                <p class="news_single_desc-subtitle">
+                                    {{el.date}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="news_single_block_text">
+                            <p>
+                                {{el.description}}
+                            </p>
+                        </div>
+                        <div class="news_single_block_button">
+                            <a href="{% url 'post_detail' el.slug %}" class="news_single_block_btn">
+                                Толық оқу
+                            </a>
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer start -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__body">
+                <div class="footer_logo">
+                    <img src="{% static 'img/footer_logo.svg'%}" alt="">
+                </div>
+                <div class="footer_info_block">
+                    <div class="footer_info">
+                        <p>2020-2021 <br> Жамбыл Инновациялық <br> Жоғары Колледжі</p>
+                    </div>
+                    <div class="footer_info">
+                        <p>ҚР, Жамбыл Облысы, Тараз Қаласы, <br> Пушкин көшесі, 154</p>
+                    </div>
+                    <div class="footer_info">
+                        <p>Колледж қабылдау бөлімінің <br> байланыс телефоны: <br>+77262430713, +77477802727</p>
+                    </div>
+                </div>
+                <div class="footer_socials">
+                    <div class="footer_icon">
+                        <a href="">
+                            <img src="{% static 'img/facebook_icon.svg'%}" alt="">
+                        </a>
+                    </div>
+                    <div class="footer_icon">
+                        <a href="">
+                            <img src="{% static 'img/whatsapp_icon.svg'%}" alt="">
+                        </a>
+                    </div>
+                    <div class="footer_icon">
+                        <a href="">
+                            <img src="{% static 'img/instagram_icon.svg'%}" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/dropbtn.js'%}"></script>
+    <script src="{% static 'js/script.js'%}"></script>
+</body>
+
+</html>
