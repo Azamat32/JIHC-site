@@ -95,3 +95,16 @@ def profession_page(request):
     dropdown = NavList.objects.all()
 
     return render(request, 'profession_single-page.html',{'dropdown':dropdown})
+
+
+def student_life_page(request):
+    dropdown = NavList.objects.all()
+    return render(request,'student_life.html',{'dropdown':dropdown})
+
+def clubs_page(request):
+    dropdown = NavList.objects.all()
+    return render(request,'clubs.html',{'dropdown':dropdown})
+
+def valounter_page(request):
+    dropdown = NavList.objects.all()
+    return render(request,'clubs.html',{'dropdown':dropdown})
