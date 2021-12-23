@@ -1,4 +1,4 @@
-{% extends "students_base.html" %} {%block content%}
+{% extends "students_base.html" %}  {%load static%} {%block content%}
 
 
 <!-- Header start -->
@@ -6,7 +6,7 @@
     <div class="container">
         <div class="header__body">
             <div class="header_title">
-                <h2>Студенттік өмір туралы</h2>
+                <h2>Студенттік өмір</h2>
             </div>
             <div class="header_subtitle">
                 <span class="header_subtitle-italic">JIHC</span> / Студенттік өмір
@@ -14,6 +14,30 @@
         </div>
     </div>
 </header>
-
-
+<section class="students_life">
+    <div class="container">
+        <div class="students_life__body">
+            <div class="students_life-header">
+                <div class="students_life-img">
+                    <img src="{% static 'img/Colledge_photo.jpg'%}" alt="">
+                </div>
+                <div class="students_life-img">
+                    <img src="{% static 'img/Colledge_photo.jpg'%}" alt="">
+                </div>
+            </div>
+            <div class="students_life-content">
+                <p class="students_life-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet id maecenas non eu. Sit sem nisl, donec consequat vestibulum eget ut nam. Arcu, ut ornare diam quisque neque fringilla senectus nisl. Pulvinar neque feugiat id ultrices ultrices massa scelerisque. Lectus amet, et ipsum in viverra id venenatis. Eu vitae morbi id velit a ut pretium, et condimentum. Et potenti aliquam pellentesque libero tincidunt orci, scelerisque. Enim placerat morbi eget amet, sit fermentum neque commodo, eu. Id nisl, lorem curabitur lacus.
+                </p>
+                <p class="students_life-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet id maecenas non eu. Sit sem nisl, donec consequat vestibulum eget ut nam. Arcu, ut ornare diam quisque neque fringilla senectus nisl. Pulvinar neque feugiat id ultrices ultrices massa scelerisque. Lectus amet, et ipsum 
+                </p>
+                <p class="students_life-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet id maecenas non eu. Sit sem nisl, donec consequat vestibulum eget ut nam. Arcu, ut ornare diam quisque neque fringilla senectus nisl. Pulvinar neque feugiat id ultrices ultrices massa scelerisque. Lectus amet, et ipsum in viverra id venenatis. Eu vitae morbi id velit a ut pretium, et condimentum. Et potenti aliquam pellentesque libero tincidunt orci, scelerisque. Enim placerat morbi eget amet, sit fermentum neque commodo, eu. Id nisl, lorem curabitur lacus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet id maecenas non eu. Sit sem nisl, donec consequat vestibulum eget ut nam. Arcu, ut ornare diam quisque neque fringilla senectus nisl. Pulvinar neque feugiat id ultrices ultrices massa scelerisque. Lectus amet, et ipsum in viverra id venenatis. Eu vitae morbi id velit a ut pretium, et condimentum. Et potenti aliquam pellentesque libero tincidunt orci, scelerisque. Enim placerat morbi eget amet, sit fermentum neque commodo, eu. Id nisl, lorem curabitur lacus.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 {%endblock%}
+

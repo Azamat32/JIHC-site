@@ -1,4 +1,4 @@
-{% extends "students_base.html" %} {%block content%}
+{% extends "students_base.html" %} {%load static%} {%block content%}
 
 
 <!-- Header start -->
@@ -14,6 +14,59 @@
         </div>
     </div>
 </header>
+
+
+<section class="clubs">
+    <div class="container">
+        <div class="clubs__body">
+            <div class="clubs_video">
+                <video preload="auto" controls poster="">
+                    <source src="">
+                </video>
+            </div>
+            <div class="clubs_item">
+                <div class="clubs_item-title">
+                    <h3 class="main_title">
+                        Ағылшын клабы
+                    </h3>
+                </div>
+                <div class="clubs_item-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet id maecenas non eu. Sit sem nisl, donec consequat vestibulum eget ut nam. Arcu, ut ornare diam quisque neque fringilla senectus nisl. Pulvinar neque feugiat id ultrices ultrices massa scelerisque. Lectus amet, et ipsum in viverra id venenatis. Eu vitae morbi id velit a ut pretium, et condimentum. Et potenti aliquam pellentesque libero tincidunt orci, scelerisque. Enim placerat morbi eget amet, sit fermentum neque commodo, eu. Id nisl, lorem curabitur lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet id maecenas non eu. Sit sem nisl, donec consequat vestibulum eget ut nam. Arcu, ut ornare diam quisque neque fringilla senectus nisl. Pulvinar neque feugiat id ultrices ultrices massa scelerisque. Lectus amet, et ipsum in viverra id venenatis. Eu vitae morbi id velit a ut pretium, et condimentum. Et potenti aliquam pellentesque libero tincidunt orci, scelerisque. Enim placerat morbi eget amet, sit fermentum neque commodo, eu. Id nisl, lorem curabitur lacus.</p>
+                </div>
+                <div class="clubs_item-gallery">
+                    <div class="gallery_clubs_item-img">
+                        <img src="{%static 'img/Colledge_photo.jpg'%}" alt="">
+                    </div>
+                    <div class="gallery_clubs_item-img">
+                        <img src="{%static 'img/Colledge_photo.jpg'%}" alt="">
+                    </div>
+                    <div class="gallery_clubs_item-img">
+                        <img src="{%static 'img/Colledge_photo.jpg'%}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="clubs_item flex_item">
+                <div class="clubs_item-title">
+                    <h3 class="main_title">
+                        Домбыра клабы
+                    </h3>
+                </div>
+                <div class="flex_clubs_item-content">
+                    <div class="flex_clubs_item-text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet id maecenas non eu. Sit sem nisl, donec consequat vestibulum eget ut nam. Arcu, ut ornare diam quisque neque fringilla senectus nisl. Pulvinar neque feugiat id ultrices ultrices massa scelerisque. Lectus amet, et ipsum in viverra id venenatis. Eu vitae morbi id velit a ut pretium, et condimentum. Et potenti aliquam pellentesque libero tincidunt orci, scelerisque. Enim placerat morbi eget amet, sit fermentum neque commodo, eu. Id nisl, lorem curabitur lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet id maecenas non eu. Sit sem nisl, donec consequat vestibulum eget ut nam. Arcu, ut ornare diam quisque neque fringilla senectus nisl. Pulvinar neque feugiat id ultrices ultrices massa scelerisque. Lectus amet, et ipsum in viverra id venenatis. Eu vitae morbi id velit a ut pretium, et condimentum. Et potenti aliquam pellentesque libero tincidunt orci, scelerisque. Enim placerat morbi eget amet, sit fermentum neque commodo, eu. Id nisl, lorem curabitur lacus.
+                        </p>
+                    </div>
+                    <div class="flex_clubs_item-video">
+                        <video preload="auto" controls poster="">
+                            <source src="">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 {%endblock%}
