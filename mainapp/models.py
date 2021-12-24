@@ -100,6 +100,22 @@ class StudentPageForm(models.Model):
     description_second = models.TextField(max_length=255,verbose_name=' Второй абзац',default='')
     def __str__(self):
         return(self.title)
+
+
+class students_life_img(models.Model):
+
+    img = models.ImageField(upload_to="gallery")
+    
+class students_life_description(models.Model):
+
+    description = models.TextField(max_length=600,default='')
+
+class clubs_page_form(models.Model):
+    video = models.FileField(upload_to='videos_uploaded',verbose_name='Основной плеер страницы',null=True,validators=[FileExtensionValidator(allowed_extensions=['MOV','avi','mp4','webm','mkv'])])
+
+    title = models.CharField(max_length=20 , default='')
+    club_description = models.TextField(max_length=500,default='')
+    img = models.ImageField(upload_to="gallery")
    
 
 

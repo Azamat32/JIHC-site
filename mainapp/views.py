@@ -99,11 +99,14 @@ def profession_page(request):
 
 def student_life_page(request):
     dropdown = NavList.objects.all()
-    return render(request,'student_life.html',{'dropdown':dropdown})
+    student_img = students_life_img.objects.order_by('-id')[:2]
+    students_description = students_life_description.objects.all()
+    return render(request,'student_life.html',{'dropdown':dropdown,'student_img':student_img,'students_description':students_description})
 
 def clubs_page(request):
+    club_form = clubs_page_form.objects.all()
     dropdown = NavList.objects.all()
-    return render(request,'clubs.html',{'dropdown':dropdown})
+    return render(request,'clubs.html',{'dropdown':dropdown,'club':club_form})
 
 def valounter_page(request):
     dropdown = NavList.objects.all()

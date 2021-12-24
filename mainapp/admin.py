@@ -3,6 +3,13 @@ from .models import *
 
 # Register your models here.
 
+
+
+admin.site.register(students_life_img)
+   
+   
+admin.site.register(students_life_description)
+admin.site.register(clubs_page_form)
 admin.site.register(SwiperImg)
 admin.site.register(TalapkerPost)
 admin.site.register(NewsBigPost)
