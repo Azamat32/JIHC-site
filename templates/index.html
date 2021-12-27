@@ -124,26 +124,111 @@
         </div>
     </section>
 
-    <div class="intro">
+<section class="main_features">
+    <div class="container">
+        <div class="main_features__body">
+            <div class="main_features-title">
+                <h3 class="main_title">
+                    Наши взгляды и Цели
+                </h3>
+            </div>
+            <div class="main_features_top">
+                <div class="main_features_top-item">
+                    <div class="main_features_text-title text_left">
+                        <h3>Взгляды на обучение</h3>
+                    </div>
+                    <div class="main_features-text text_left">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                    </div>
+                </div>
+                <div class="main_features_top-item">
+                    <div class="main_features_text-title text_right">
+                        <h3>Главная цель</h3>
+                    </div>
+                    <div class="main_features-text text_right">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="main_featurs_icon-list">
+                <div class="main_featurs_icon-item">
+                    <div class="main_featurs_icon">
+                        <img src="../static/img/main_features_icon-1.svg" alt="">
+                    </div>
+                    <div class="main_featurs_icon-text">
+                        <p>Креативность</p>
+                    </div>
+                </div>
+                <div class="main_featurs_icon-item">
+                    <div class="main_featurs_icon">
+                        <img src="../static/img/main_features_icon-2.svg" alt="">
+                    </div>
+                    <div class="main_featurs_icon-text">
+                        <p>Высокие цели</p>
+                    </div>
+                </div>
+                <div class="main_featurs_icon-item">
+                    <div class="main_featurs_icon">
+                        <img src="../static/img/main_features_icon-3.svg" alt="">
+                    </div>
+                    <div class="main_featurs_icon-text">
+                        <p>Принципы и этика</p>
+                    </div>
+                </div>
+                <div class="main_featurs_icon-item">
+                    <div class="main_featurs_icon">
+                        <img src="../static/img/main_features_icon-4.svg" alt="">
+                    </div>
+                    <div class="main_featurs_icon-text">
+                        <p>Соперничество</p>
+                    </div>
+                </div>
+                <div class="main_featurs_icon-item">
+                    <div class="main_featurs_icon">
+                        <img src="../static/img/main_features_icon-5.svg" alt="">
+                    </div>
+                    <div class="main_featurs_icon-text">
+                        <p>Помощь в выборе</p>
+                    </div>
+                </div>
+                <div class="main_featurs_icon-item">
+                    <div class="main_featurs_icon">
+                        <img src="../static/img/main_features_icon-6.svg" alt="">
+                    </div>
+                    <div class="main_featurs_icon-text">
+                        <p>Учителя из разных учереждений</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="intro">
         <div class="container">
             <div class="intro__body">
+                <div class="intro_title">
+                    <h3 class="hypertitle">
+                        <a href="">Жаналықтар</a>
+                    </h3>
+                </div>
                 <div class="intro_sliper-container">
                     <div class="intro_swiper-container">
                         <div class="swiper swiper_slider-intro">
                             <div class="swiper-wrapper">
-                                <!-- Slides -->
+                                
                                 {% for slide in slider %}
                                 <div class="swiper-slide">
                                     <img src="{{slide.img.url}}" alt="">
                                 </div>
                                 {% endfor %}
-
-
                             </div>
-                            <!-- If we need pagination -->
                             <div class="swiper-pagination"></div>
 
-                            <!-- If we need navigation buttons -->
                             <div class="swiper-button-prev"></div>
                             <div class="swiper-button-next"></div>
 
@@ -153,7 +238,7 @@
             </div>
         </div>
     </div>
-
+<!-- 
     <div class="news">
         <div class="container">
             <div class="news__body">
@@ -217,14 +302,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="features">
         <div class="container">
             <div class="features__body">
                 <div class="features_title">
-                    <h3 class="main_title">
-                        ТАЛАПКЕРГЕ
+                    <h3 class="hypertitle">
+                        <a href="">ТАЛАПКЕРГЕ</a>
                     </h3>
                 </div>
                 <div class="features_row">
