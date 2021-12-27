@@ -100,7 +100,6 @@ img {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans:wght@400;600;700&family=Open+Sans:wght@500;600;700&display=swap');
-
 .container {
     max-width: 1290px;
     margin: 0 auto;
@@ -498,93 +497,103 @@ img {
     text-transform: uppercase;
 }
 
-.main_features {
-}
-.main_features__body {
-}
-.main_features-title{
+.main_features {}
+
+.main_features__body {}
+
+.main_features-title {
     margin-top: 50px;
     margin-bottom: 40px;
 }
-.main_features-title h3{
+
+.main_features-title h3 {
     color: #007074;
     font-size: 24px;
     text-align: center;
     font-family: "Nunito Sans", sans-serif;
 }
+
 .main_features_top {
     display: flex;
     justify-content: space-between;
 }
+
 .main_features_top-item {
     max-width: 520px;
 }
+
 .main_features_text-title {
     margin-bottom: 30px;
 }
-.main_features_text-title h3{
+
+.main_features_text-title h3 {
     color: #007074;
     font-size: 24px;
     font-weight: 600;
     font-family: "Nunito Sans", sans-serif;
 }
-.main_features-text p{
+
+.main_features-text p {
     font-size: 18px;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 600;
     line-height: 1.4;
-
 }
+
 .text_left {
     text-align: left;
 }
-.text_right{
+
+.text_right {
     text-align: right;
 }
+
 .main_featurs_icon-list {
     display: grid;
-    grid-template-columns:repeat(auto-fill, 210px);
+    grid-template-columns: repeat(auto-fill, 210px);
     margin-top: 50px;
 }
-.main_featurs_icon-item {
 
-}
+.main_featurs_icon-item {}
+
 .main_featurs_icon {
     display: flex;
     justify-content: center;
 }
+
 .main_featurs_icon-text {
     text-align: center;
     margin-top: 30px;
     color: #007074;
     font-family: "Nunito Sans", serif;
     font-weight: 600;
+}
 
-}
-.main_featurs_icon-text p{
-    
-}
+.main_featurs_icon-text p {}
 
 .intro {
     padding: 50px 0 50px 0;
     margin-bottom: 100px;
 }
-.intro_title{
+
+.intro_title {
     margin-bottom: 30px;
 }
-.hypertitle{
+
+.hypertitle {
     font-family: "Nunito Sans", serif;
     font-size: 30px;
-
     position: relative;
     display: inline-block;
     font-style: italic;
     font-weight: bold;
 }
-.hypertitle a{
+
+.hypertitle a {
     color: #007074;
 }
-.hypertitle:before{
+
+.hypertitle:before {
     content: "";
     height: 3px;
     background: #007074;
@@ -592,6 +601,7 @@ img {
     position: absolute;
     bottom: -5px;
 }
+
 .swiper_slider-intro {
     width: 100%;
     height: 570px;
@@ -1359,37 +1369,42 @@ img {
     padding-bottom: 20px;
 }
 
-.students_life{
+.students_life {
     margin-top: 100px;
     margin-bottom: 100px;
 }
 
-.students_life-header{
+.students_life-header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
 }
+
 @media (max-width: 979px) {
     .students_life-header {
         flex-direction: column;
         justify-content: center;
     }
 }
-.students_life-header img{
+
+.students_life-header img {
     width: 640px;
     object-fit: contain;
     border-radius: 5px;
     padding: 0 10px;
 }
+
 @media (max-width: 979px) {
     .students_life-header img {
         padding: 10px 0;
         margin: 0 auto;
     }
 }
-.students_life-text{
+
+.students_life-text {
     margin-bottom: 30px;
 }
+
 .namys_kodeksy {
     margin-top: 100px;
     margin-bottom: 100px;
@@ -1429,15 +1444,23 @@ img {
 .for_parents-title {
     margin-bottom: 20px;
 }
-.clubs{
+
+.clubs {
     margin-top: 100px;
     margin-bottom: 100px;
 }
-.clubs_video{
+
+.gallery_clubs_item-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover !important;
+}
+
+.clubs_video {
     display: flex;
     justify-content: center;
-
 }
+
 .clubs_video video {
     width: 1050px;
     border-radius: 5px;
@@ -1446,57 +1469,66 @@ img {
     height: 545px;
     margin-bottom: 30px;
 }
+
 @media (max-width: 1117px) {
     .clubs_video video {
         width: 100%;
         height: 100%;
     }
 }
-.clubs_item{
+
+.clubs_item {
     margin-bottom: 50px;
 }
-.clubs_item-title{
+
+.clubs_item-title {
     margin-bottom: 30px;
 }
-.clubs_item-gallery{
+
+.clubs_item-gallery {
     margin-top: 50px;
     margin-bottom: 20px;
 }
-.clubs_item-gallery{
+
+.clubs_item-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     grid-gap: 20px;
 }
+
 @media (max-width: 979px) {
     .clubs_item-gallery {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 @media (max-width: 579px) {
     .clubs_item-gallery {
         grid-template-columns: repeat(1, 1fr);
     }
 }
 
-.gallery_clubs_item-img{
+.gallery_clubs_item-img {
     width: 100%;
 }
 
-.flex_clubs_item-content{
+.flex_clubs_item-content {
     display: flex;
     justify-content: space-between;
 }
+
 @media (max-width: 781px) {
     .flex_clubs_item-content {
         flex-direction: column;
     }
 }
 
-.flex_clubs_item-text{
+.flex_clubs_item-text {
     width: 50%;
     margin-right: 20px;
 }
+
 @media (max-width: 781px) {
     .flex_clubs_item-text {
         width: 100%;
@@ -1505,14 +1537,16 @@ img {
     }
 }
 
-.flex_clubs_item-video{
+.flex_clubs_item-video {
     width: 45%;
 }
+
 @media (max-width: 979px) {
     .flex_clubs_item-video {
         width: 55%;
     }
 }
+
 @media (max-width: 781px) {
     .flex_clubs_item-video {
         width: 100%;
@@ -1584,6 +1618,7 @@ img {
     -ms-flex-pack: center;
     justify-content: center;
 }
+
 @media (max-width: 579px) {
     .gallery_catalog {
         grid-template-columns: repeat(auto-fill, 380px);

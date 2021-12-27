@@ -88,8 +88,8 @@ def kodeks_page(request):
 
 def parents_page(request):
     dropdown = NavList.objects.all()
-
-    return render(request, 'for_parents.html',{'dropdown':dropdown})
+    for_parents = For_parents.objects.all()
+    return render(request, 'for_parents.html',{'dropdown':dropdown,'for_parents':for_parents})
 
 def profession_page(request):
     dropdown = NavList.objects.all()
@@ -104,9 +104,11 @@ def student_life_page(request):
     return render(request,'student_life.html',{'dropdown':dropdown,'student_img':student_img,'students_description':students_description})
 
 def clubs_page(request):
+    club_video = clubs_page_video.objects.all()
     club_form = clubs_page_form.objects.all()
     dropdown = NavList.objects.all()
-    return render(request,'clubs.html',{'dropdown':dropdown,'club':club_form})
+    photos = clubImage.objects.all()
+    return render(request,'clubs.html',{'dropdown':dropdown,'club_form':club_form,'photos':photos,'club_video': club_video.last()})
 
 def valounter_page(request):
     dropdown = NavList.objects.all()
