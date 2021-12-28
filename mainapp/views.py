@@ -110,4 +110,4 @@ def clubs_page(request):
 
 def valounter_page(request):
     dropdown = NavList.objects.all()
-    return render(request,'clubs.html',{'dropdown':dropdown})
+    return render(request,'valounter.html',{'dropdown':dropdown})
