@@ -111,5 +111,6 @@ def clubs_page(request):
     return render(request,'clubs.html',{'dropdown':dropdown,'club_form':club_form,'photos':photos,'club_video': club_video.last()})
 
 def valounter_page(request):
+    video = ValounterVideo.objects.all()
     dropdown = NavList.objects.all()
-    return render(request,'valounter.html',{'dropdown':dropdown})
+    return render(request,'valounter.html',{'dropdown':dropdown,'video':video.last()})

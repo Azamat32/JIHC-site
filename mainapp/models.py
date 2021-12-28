@@ -140,6 +140,14 @@ class For_parents(models.Model):
 
         return (self.title)
 
+class ValounterVideo(models.Model):
+
+    title = models.CharField(max_length=50)
+    video = models.FileField(upload_to='videos_uploaded',verbose_name='Основной плеер страницы',null=True,validators=[FileExtensionValidator(allowed_extensions=['MOV','avi','mp4','webm','mkv'])])
+
+    def __str__(self):
+        return (self.title)
+
 
 
     

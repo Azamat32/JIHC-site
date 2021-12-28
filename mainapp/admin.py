@@ -17,6 +17,7 @@ class clubAdmin(admin.ModelAdmin):
 @admin.register(clubImage)
 class clubImageAdmin(admin.ModelAdmin):
     pass
+admin.site.register(ValounterVideo)
 admin.site.register(clubs_page_video)
 admin.site.register(students_life_img)
 admin.site.register(For_parents)
