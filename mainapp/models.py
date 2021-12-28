@@ -7,6 +7,7 @@ from django.core.validators import RegexValidator,FileExtensionValidator
 from unidecode import unidecode
 
 
+
 class SwiperImg(models.Model):
 
     img = models.ImageField(upload_to="gallery")
@@ -79,12 +80,14 @@ class Gallery(models.Model):
     img = models.ImageField(upload_to="gallery" )
 
     title = models.CharField(max_length=20,default='')
-
+    def __str__(self):
+        return " {} ".format(self.title)
 
 class TalapkerPageTable(models.Model):
     title = models.CharField(max_length=20 ,default='')
     number = models.CharField(primary_key=True, max_length=6, validators=[RegexValidator(r'^\d{1,6}$')])
-    table_description = models.TextField(max_length=50)
+    table_description = models.TextField(max_length=100,verbose_name = 'Мамандык туралы')
+    table_description2 = models.TextField(max_length=100,default='',verbose_name = 'Біліктілік туралы')    
     date = models.CharField(max_length=20)
     def __str__(self):
         return(self.title)
@@ -107,16 +110,35 @@ class students_life_img(models.Model):
     img = models.ImageField(upload_to="gallery")
     
 class students_life_description(models.Model):
-
+    
     description = models.TextField(max_length=600,default='')
 
 class clubs_page_form(models.Model):
-    video = models.FileField(upload_to='videos_uploaded',verbose_name='Основной плеер страницы',null=True,validators=[FileExtensionValidator(allowed_extensions=['MOV','avi','mp4','webm','mkv'])])
 
     title = models.CharField(max_length=20 , default='')
     club_description = models.TextField(max_length=500,default='')
-    img = models.ImageField(upload_to="gallery")
-   
+    image = models.FileField(blank=True)
+    
+    def __str__(self):
+        return (self.title)
+
+class clubs_page_video(models.Model):
+    video = models.FileField(upload_to='videos_uploaded',verbose_name='Основной плеер страницы',null=True,validators=[FileExtensionValidator(allowed_extensions=['MOV','avi','mp4','webm','mkv'])])
+    
+
+class clubImage(models.Model):
+    club = models.ForeignKey(clubs_page_form,default=None,on_delete=models.CASCADE)
+    image = models.FileField(upload_to = 'gallery')
+ 
+class For_parents(models.Model):
+
+    title = models.CharField(max_length=40)
+    description = models.TextField(max_length=500)
+
+
+    def __str__(self):
+
+        return (self.title)
 
 
 
