@@ -19,7 +19,8 @@ class Post(models.Model):
     title = models.CharField(max_length=20)
     description = models.TextField(max_length=400)
     img = models.ImageField(upload_to="gallery")
-    
+    descriptionRU = models.TextField(max_length=400,default='')
+    descriptionEN = models.TextField(max_length=400,default='')
     def __str__(self):
         return(self.title)
 
@@ -48,8 +49,9 @@ class NewsShortPost(Post):
 class NavList(models.Model):
     title = models.CharField(max_length=20 , default='')
     slug = models.SlugField(default='',unique=True)
-    description = models.TextField(max_length=600,default='',verbose_name=' Первый абзац')
-    description_second = models.TextField(max_length=600,default='',verbose_name=' Второй абзац')
+    descriptionKZ = models.TextField(max_length=800,default='',verbose_name=' Первый абзац на казахском')
+    descriptionRU = models.TextField(max_length=800,default='',verbose_name=' Первый абзац на русском')
+    descriptionEN = models.TextField(max_length=800,default='',verbose_name=' Первый абзац на английском')
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(NavList, self).save(*args, **kwargs)
@@ -67,12 +69,16 @@ class NewsPostForm(models.Model):
     date = models.DateField()
     slug = models.SlugField(default='',unique=True)
     
-    description = models.TextField(max_length=900)
+    descriptionKZ = models.TextField(max_length=900,default='')
+    
+    descriptionRU = models.TextField(max_length=900,default='')
+
+    descriptionEN = models.TextField(max_length=900,default='')
+
     def __str__(self):
         return " {} ".format(self.title)
   
     def save(self, *args, **kwargs):
-        self.slug = slugify(unidecode(self.title))
         super(NewsPostForm, self).save(*args, **kwargs)
 
 
