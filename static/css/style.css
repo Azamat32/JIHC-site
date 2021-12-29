@@ -555,13 +555,12 @@ img {
     }
 }
 
-.main_features-text p {}
-
 .main_features-text p {
     font-size: 18px;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 600;
     line-height: 1.4;
+    opacity: 0.7;
 }
 
 @media (max-width: 578px) {
@@ -630,11 +629,12 @@ img {
     text-align: center;
     margin-top: 30px;
     color: #007074;
-    font-family: "Nunito Sans", serif;
-    font-weight: 600;
 }
 
-.main_featurs_icon-text p {}
+.main_featurs_icon-text p {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+}
 
 .intro {
     padding: 50px 0 50px 0;
@@ -688,7 +688,7 @@ img {
 .swiper_slider-intro img {
     display: block;
     width: 100%;
-    height: inherit;
+    height: 100%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -698,10 +698,14 @@ img {
     object-fit: cover;
 }
 
-.swiper-slide-active {
-    width: 500px;
-    background-color: #000;
-    ;
+.slide-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, transparent, #000);
+    opacity: 0.3;
 }
 
 .swiper_slider-intro .swiper-button-prev:after,
@@ -737,6 +741,16 @@ img {
 
 .swiper-pagination-bullet-active {
     background: #FFF !important;
+}
+
+.swiper-slide-link{
+    font-size: 20px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 50px;
+    left: 20px;
+    color: #FFF;
+    padding: 10px 15px 10px 10px
 }
 
 .news {
@@ -1924,6 +1938,8 @@ img {
 .calendar-list {
     margin: 100px 0;
 }
+
+
 
 .footer {
     background: #007074;

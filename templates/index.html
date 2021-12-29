@@ -47,11 +47,6 @@
                         Жаңалықтар
                     </a>
                     </li>
-                    <li class="navbar_nav-list">
-                        <a href="{% url 'about'%}" class="navbar_nav-link">
-                        Біз туралы
-                    </a>
-                    </li>
                     <li class="navbar_nav-list dropdown">
                         <a href="{% url 'talapker'%}" class="navbar_nav-link">
                         Талапкерге
@@ -69,6 +64,11 @@
                             {% endfor%}
 
                         </ul>
+                    </li>
+                    <li class="navbar_nav-list">
+                        <a href="{% url 'about'%}" class="navbar_nav-link">
+                        Біз туралы
+                    </a>
                     </li>
                     <li class="navbar_nav-list dropdown">
                         <a href="{% url 'student'%}" class="navbar_nav-link">
@@ -227,6 +227,8 @@
                                 {% for slide in slider %}
                                 <div class="swiper-slide">
                                     <img src="{{slide.img.url}}" alt="">
+                                    <div class="slide-bg"></div>
+                                    <a href="" class="swiper-slide-link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, eum!</a>
                                 </div>
                                 {% endfor %}
                             </div>
