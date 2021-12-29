@@ -20,7 +20,10 @@ urlpatterns = [
     path('profession/', profession_page , name='profession'),
     path('students/student_life/', student_life_page , name='student_life'),
     path('students/clubs/',clubs_page , name='clubs'),
-    path('students/valounter/',valounter_page , name='valounter')
+    path('students/valounter/',valounter_page , name='valounter'),
+    path('kz/' , kz_page , name = 'kzPage'),
+    path('ru/' , ru_page , name = 'kzPage'),
+    path('en/' , en_page , name = 'kzPage')
 
         
 ]

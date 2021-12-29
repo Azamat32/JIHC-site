@@ -1,4 +1,4 @@
- {%load static%}
+{% extends "base.html" %} {%load static%}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,7 @@
 </head>
 
 <body>
-
+    {%block content%}
     <!-- Navbar start -->
     <section class="navbar">
         <div class="container">
@@ -200,7 +200,7 @@
         </div>
     </div>
 
-
+    {%endblock%}
     <!-- Footer start -->
     <footer class="footer">
         <div class="container">
@@ -239,10 +239,11 @@
             </div>
         </div>
     </footer>
-
+    {%block script%}
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="{% static 'js/dropbtn.js'%}"></script>
     <script src="{% static 'js/script.js'%}"></script>
+    {%endblock%}
 </body>
 
 </html>
