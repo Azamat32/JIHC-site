@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from django.views.generic import ListView, DetailView
-
+from django.core.paginator import Paginator
 # Create your views here.
 class MonthPostDetailView(DetailView):
     pass
@@ -47,11 +47,13 @@ def index_page(request):
 def news_page(request):
     dropdown = NavList.objects.all()
     newsPost = NewsPostForm.objects.all()
-
+    news_paginator = Paginator(newsPost, 2)
+    page_num = request.GET.get('page')
+    page = news_paginator.get_page(page_num)
     for pos in newsPost:
         print(pos)
         print(pos.slug)
-    return render(request, 'news.html',{'dropdown':dropdown,"newsPost": newsPost})
+    return render(request, 'news.html',{'dropdown':dropdown,"newsPost": newsPost,'page':page})
 
 def about_page(request):
     dropdown = NavList.objects.all()
