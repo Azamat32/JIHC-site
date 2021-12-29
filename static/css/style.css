@@ -1190,6 +1190,10 @@ img {
     font-size: 20px;
     font-weight: 700;
     color: #007074;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 @media (max-width: 781px) {
@@ -1222,6 +1226,10 @@ img {
 
 .news_single_block_text p {
     color: #264653;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 @media (max-width: 579px) {

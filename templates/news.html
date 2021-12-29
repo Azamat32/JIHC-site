@@ -185,7 +185,7 @@
                         </div>
                         <div class="news_single_block_text">
                             <p>
-                                {{el.description}}
+                                {%autoescape off%} {{el.description}} {%endautoescape%}
                             </p>
                         </div>
                         <div class="news_single_block_button">
