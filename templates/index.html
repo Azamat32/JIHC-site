@@ -1,68 +1,57 @@
- {% load static %}
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- подключение Css -->
-    <link rel="stylesheet" href="{%static 'css/style.css'%}">
-    <!-- подключение Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
-    <!-- подключение Swiper -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    <!--подключение Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <title>JIHC offical site</title>
-    <script src="//code-ya.jivosite.com/widget/9x0Bpqki8P" async></script>
-</head>
-
-<body>
-    {%block content%}
-    <!-- Navbar start -->
-    <section class="navbar">
-        <div class="container">
-            <div class="header__body">
-                <div class="navbar_top">
-                    <div class="navbar_logo">
-                        <a href="index.html">
-                            <img src="{% static 'img/header_Logo.svg'%}" alt="">
-                        </a>
-                    </div>
-                    <div class="navbar_burger">
-                        <span></span>
-                    </div>
+{% extends "base.html" %} {% load static %} {%block content%}
+<!-- Navbar start -->
+<section class="navbar">
+    <div class="container">
+        <div class="header__body">
+            <div class="navbar_top">
+                <div class="navbar_logo">
+                    <a href="index.html">
+                        <img src="{% static 'img/header_Logo.svg'%}" alt="">
+                    </a>
                 </div>
-                <ul class="navbar_nav">
-                    <li class="navbar_nav-list">
-                        <a href="{% url 'index'%}" class="navbar_nav-link active">
+                <div class="navbar_burger">
+                    <span></span>
+                </div>
+            </div>
+            <ul class="navbar_nav">
+                <li class="navbar_nav-list">
+                    <a href="{% url 'index'%}" class="navbar_nav-link active">
                         Басты
                     </a>
-                    </li>
-                    <li class="navbar_nav-list">
-                        <a href="{% url 'news'%}" class="navbar_nav-link">
+                </li>
+                <li class="navbar_nav-list">
+                    <a href="{% url 'news'%}" class="navbar_nav-link">
                         Жаңалықтар
                     </a>
+<<<<<<< HEAD
                     </li>
                     <li class="navbar_nav-list dropdown">
                         <a href="{% url 'talapker'%}" class="navbar_nav-link">
+=======
+                </li>
+                <li class="navbar_nav-list">
+                    <a href="{% url 'about'%}" class="navbar_nav-link">
+                        Біз туралы
+                    </a>
+                </li>
+                <li class="navbar_nav-list dropdown">
+                    <a href="{% url 'talapker'%}" class="navbar_nav-link">
+>>>>>>> 0f1cb47eeeb1c83155cd20c1fab4e58889be3550
                         Талапкерге
                         <i class="fas fa-angle-down"></i>
                     </a>
-                        <span class="hidden"><i class="fas fa-plus"></i></span>
+                    <span class="hidden"><i class="fas fa-plus"></i></span>
 
-                        <ul class="navbar_sub-nav">
-                            {% for el in dropdown%}
-                            <li class="navbar_sub_nav-list">
-                                <a href="{% url 'talapker_detail'  el.slug %}" class="navbar_sub_nav-link">
+                    <ul class="navbar_sub-nav">
+                        {% for el in dropdown%}
+                        <li class="navbar_sub_nav-list">
+                            <a href="{% url 'talapker_detail'  el.slug %}" class="navbar_sub_nav-link">
                                 {{el.title}}
                             </a>
-                            </li>
-                            {% endfor%}
+                        </li>
+                        {% endfor%}
 
+<<<<<<< HEAD
                         </ul>
                     </li>
                     <li class="navbar_nav-list">
@@ -72,158 +61,165 @@
                     </li>
                     <li class="navbar_nav-list dropdown">
                         <a href="{% url 'student'%}" class="navbar_nav-link">
+=======
+                    </ul>
+                </li>
+                <li class="navbar_nav-list dropdown">
+                    <a href="{% url 'student'%}" class="navbar_nav-link">
+>>>>>>> 0f1cb47eeeb1c83155cd20c1fab4e58889be3550
                         Студенттерге
                         <i class="fas fa-angle-down"></i>
                     </a>
-                        <span class="hidden"><i class="fas fa-plus"></i></span>
+                    <span class="hidden"><i class="fas fa-plus"></i></span>
 
-                        <ul class="navbar_sub-nav">
-                            <li class="navbar_sub_nav-list">
-                                <a href="{% url 'student_life'%}" class="navbar_sub_nav-link">
+                    <ul class="navbar_sub-nav">
+                        <li class="navbar_sub_nav-list">
+                            <a href="{% url 'student_life'%}" class="navbar_sub_nav-link">
                                 Студенттік өмір
                             </a>
-                            </li>
-                            <li class="navbar_sub_nav-list">
-                                <a href="{% url 'kodeks'%}" class="navbar_sub_nav-link">
+                        </li>
+                        <li class="navbar_sub_nav-list">
+                            <a href="{% url 'kodeks'%}" class="navbar_sub_nav-link">
                                 Ар-намыс кодексі
                             </a>
-                            </li>
-                            <li class="navbar_sub_nav-list">
-                                <a href="{% url 'for_parent'%}">
+                        </li>
+                        <li class="navbar_sub_nav-list">
+                            <a href="{% url 'for_parent'%}">
                                 Ата-аналарға
                             </a>
-                            </li>
-                            <li class="navbar_sub_nav-list">
-                                <a href="{% url 'clubs'%}" class="navbar_sub_nav-link">
+                        </li>
+                        <li class="navbar_sub_nav-list">
+                            <a href="{% url 'clubs'%}" class="navbar_sub_nav-link">
                                 Үйірмелер
                             </a>
-                            </li>
-                            <li class="navbar_sub_nav-list">
-                                <a href="{% url 'valounter'%}" class="navbar_sub_nav-link">
+                        </li>
+                        <li class="navbar_sub_nav-list">
+                            <a href="{% url 'valounter'%}" class="navbar_sub_nav-link">
                                 Еріктілер
                             </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="navbar_nav-list">
-                        <a href="{% url 'gallery'%}" class="navbar_nav-link">
+                        </li>
+                    </ul>
+                </li>
+                <li class="navbar_nav-list">
+                    <a href="{% url 'gallery'%}" class="navbar_nav-link">
                         Галерея
                     </a>
-                    </li>
-                    <li class="navbar_nav-list">
-                        <a href="{% url 'contact'%}" class="navbar_nav-link">
+                </li>
+                <li class="navbar_nav-list">
+                    <a href="{% url 'contact'%}" class="navbar_nav-link">
                         Байланыс
                     </a>
-                    </li>
-                    <li class="navbar_nav-list">
-                        <a href="{% url 'calendar'%}" class="navbar_nav-link">
+                </li>
+                <li class="navbar_nav-list">
+                    <a href="{% url 'calendar'%}" class="navbar_nav-link">
                         Күнтізбе
                     </a>
-                    </li>
-                </ul>
-            </div>
+                </li>
+            </ul>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="main_features">
-        <div class="container">
-            <div class="main_features__body">
-                <div class="main_features-title">
-                    <h3 class="main_title">
-                        Наши взгляды и Цели
-                    </h3>
-                </div>
-                <div class="main_features_top">
-                    <div class="main_features_top-item">
-                        <div class="main_features_text-title text_left">
-                            <h3>Взгляды на обучение</h3>
-                        </div>
-                        <div class="main_features-text text_left">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            </p>
-                        </div>
+<section class="main_features">
+    <div class="container">
+        <div class="main_features__body">
+            <div class="main_features-title">
+                <h3 class="main_title">
+                    Наши взгляды и Цели
+                </h3>
+            </div>
+            <div class="main_features_top">
+                <div class="main_features_top-item">
+                    <div class="main_features_text-title text_left">
+                        <h3>Взгляды на обучение</h3>
                     </div>
-                    <div class="main_features_top-item">
-                        <div class="main_features_text-title text_right">
-                            <h3>Главная цель</h3>
-                        </div>
-                        <div class="main_features-text text_right">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            </p>
-                        </div>
+                    <div class="main_features-text text_left">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
                     </div>
                 </div>
-                <div class="main_featurs_icon-list">
-                    <div class="main_featurs_icon-item">
-                        <div class="main_featurs_icon">
-                            <img src="../static/img/main_features_icon-1.svg" alt="">
-                        </div>
-                        <div class="main_featurs_icon-text">
-                            <p>Креативность</p>
-                        </div>
+                <div class="main_features_top-item">
+                    <div class="main_features_text-title text_right">
+                        <h3>Главная цель</h3>
                     </div>
-                    <div class="main_featurs_icon-item">
-                        <div class="main_featurs_icon">
-                            <img src="../static/img/main_features_icon-2.svg" alt="">
-                        </div>
-                        <div class="main_featurs_icon-text">
-                            <p>Высокие цели</p>
-                        </div>
-                    </div>
-                    <div class="main_featurs_icon-item">
-                        <div class="main_featurs_icon">
-                            <img src="../static/img/main_features_icon-3.svg" alt="">
-                        </div>
-                        <div class="main_featurs_icon-text">
-                            <p>Принципы и этика</p>
-                        </div>
-                    </div>
-                    <div class="main_featurs_icon-item">
-                        <div class="main_featurs_icon">
-                            <img src="../static/img/main_features_icon-4.svg" alt="">
-                        </div>
-                        <div class="main_featurs_icon-text">
-                            <p>Соперничество</p>
-                        </div>
-                    </div>
-                    <div class="main_featurs_icon-item">
-                        <div class="main_featurs_icon">
-                            <img src="../static/img/main_features_icon-5.svg" alt="">
-                        </div>
-                        <div class="main_featurs_icon-text">
-                            <p>Помощь в выборе</p>
-                        </div>
-                    </div>
-                    <div class="main_featurs_icon-item">
-                        <div class="main_featurs_icon">
-                            <img src="../static/img/main_features_icon-6.svg" alt="">
-                        </div>
-                        <div class="main_featurs_icon-text">
-                            <p>Учителя из разных учереждений</p>
-                        </div>
+                    <div class="main_features-text text_right">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <div class="intro">
-        <div class="container">
-            <div class="intro__body">
-                <div class="intro_title">
-                    <h3 class="hypertitle">
-                        <a href="">Жаналықтар</a>
-                    </h3>
+            <div class="main_featurs_icon-list">
+                <div class="main_featurs_icon-item">
+                    <div class="main_featurs_icon">
+                        <img src="../static/img/main_features_icon-1.svg" alt="">
+                    </div>
+                    <div class="main_featurs_icon-text">
+                        <p>Креативность</p>
+                    </div>
                 </div>
-                <div class="intro_sliper-container">
-                    <div class="intro_swiper-container">
-                        <div class="swiper swiper_slider-intro">
-                            <div class="swiper-wrapper">
+                <div class="main_featurs_icon-item">
+                    <div class="main_featurs_icon">
+                        <img src="../static/img/main_features_icon-2.svg" alt="">
+                    </div>
+                    <div class="main_featurs_icon-text">
+                        <p>Высокие цели</p>
+                    </div>
+                </div>
+                <div class="main_featurs_icon-item">
+                    <div class="main_featurs_icon">
+                        <img src="../static/img/main_features_icon-3.svg" alt="">
+                    </div>
+                    <div class="main_featurs_icon-text">
+                        <p>Принципы и этика</p>
+                    </div>
+                </div>
+                <div class="main_featurs_icon-item">
+                    <div class="main_featurs_icon">
+                        <img src="../static/img/main_features_icon-4.svg" alt="">
+                    </div>
+                    <div class="main_featurs_icon-text">
+                        <p>Соперничество</p>
+                    </div>
+                </div>
+                <div class="main_featurs_icon-item">
+                    <div class="main_featurs_icon">
+                        <img src="../static/img/main_features_icon-5.svg" alt="">
+                    </div>
+                    <div class="main_featurs_icon-text">
+                        <p>Помощь в выборе</p>
+                    </div>
+                </div>
+                <div class="main_featurs_icon-item">
+                    <div class="main_featurs_icon">
+                        <img src="../static/img/main_features_icon-6.svg" alt="">
+                    </div>
+                    <div class="main_featurs_icon-text">
+                        <p>Учителя из разных учереждений</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<div class="intro">
+    <div class="container">
+        <div class="intro__body">
+            <div class="intro_title">
+                <h3 class="hypertitle">
+                    <a href="">Жаналықтар</a>
+                </h3>
+            </div>
+            <div class="intro_sliper-container">
+                <div class="intro_swiper-container">
+                    <div class="swiper swiper_slider-intro">
+                        <div class="swiper-wrapper">
+
+<<<<<<< HEAD
                                 {% for slide in slider %}
                                 <div class="swiper-slide">
                                     <img src="{{slide.img.url}}" alt="">
@@ -231,19 +227,26 @@
                                     <a href="" class="swiper-slide-link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, eum!</a>
                                 </div>
                                 {% endfor %}
+=======
+                            {% for slide in slider %}
+                            <div class="swiper-slide">
+                                <img src="{{slide.img.url}}" alt="">
+>>>>>>> 0f1cb47eeeb1c83155cd20c1fab4e58889be3550
                             </div>
-                            <div class="swiper-pagination"></div>
-
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-
+                            {% endfor %}
                         </div>
+                        <div class="swiper-pagination"></div>
+
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- 
+</div>
+<!-- 
     <div class="news">
         <div class="container">
             <div class="news__body">
@@ -309,84 +312,83 @@
         </div>
     </div> -->
 
-    <div class="features">
-        <div class="container">
-            <div class="features__body">
-                <div class="features_title">
-                    <h3 class="hypertitle">
-                        <a href="">ТАЛАПКЕРГЕ</a>
-                    </h3>
-                </div>
-                <div class="features_row">
-                    {%for el in talapker%}
-                    <div class="features_card">
+<div class="features">
+    <div class="container">
+        <div class="features__body">
+            <div class="features_title">
+                <h3 class="hypertitle">
+                    <a href="">ТАЛАПКЕРГЕ</a>
+                </h3>
+            </div>
+            <div class="features_row">
+                {%for el in talapker%}
+                <div class="features_card">
 
-                        <div class="features_card-img">
-                            <img src="{{el.img.url}}" alt="">
-                        </div>
-                        <div class="features_card-info">
-                            <p> {{el.description}}</p>
-                        </div>
-
+                    <div class="features_card-img">
+                        <img src="{{el.img.url}}" alt="">
                     </div>
-                    {%endfor%}
+                    <div class="features_card-info">
+                        <p> {% if lang == 'kz' %}{{el.description}}{% endif %}</p>
+                    </div>
 
                 </div>
+                {%endfor%}
 
-                <!-- <div class="features_button">
+            </div>
+
+            <!-- <div class="features_button">
                     <a href="{% url 'talapker'%}" class="main_button">
                         Талапкерге
                         <i class="fas fa-chevron-right"></i>
                     </a>
                 </div> -->
+        </div>
+    </div>
+</div>
+{%endblock%}
+<!-- Footer start -->
+{%block footer%}
+<footer class="footer">
+    <div class="container">
+        <div class="footer__body">
+            <div class="footer_logo">
+                <img src="{% static 'img/footer_logo.svg'%}" alt="">
+            </div>
+            <div class="footer_info_block">
+                <div class="footer_info">
+                    <p>2020-2021 <br> Жамбыл Инновациялық <br> Жоғары Колледжі</p>
+                </div>
+                <div class="footer_info">
+                    <p>ҚР, Жамбыл Облысы, Тараз Қаласы, <br> Пушкин көшесі, 154</p>
+                </div>
+                <div class="footer_info">
+                    <p>Колледж қабылдау бөлімінің <br> байланыс телефоны: <br>+77262430713, +77477802727</p>
+                </div>
+            </div>
+            <div class="footer_socials">
+                <div class="footer_icon">
+                    <a href="">
+                        <img src="{% static 'img/facebook_icon.svg'%}" alt="">
+                    </a>
+                </div>
+                <div class="footer_icon">
+                    <a href="">
+                        <img src="{% static 'img/whatsapp_icon.svg'%}" alt="">
+                    </a>
+                </div>
+                <div class="footer_icon">
+                    <a href="">
+                        <img src="{% static 'img/instagram_icon.svg'%}" alt="">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-    {%endblock%}
-    <!-- Footer start -->
-    {%block footer%}
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__body">
-                <div class="footer_logo">
-                    <img src="{% static 'img/footer_logo.svg'%}" alt="">
-                </div>
-                <div class="footer_info_block">
-                    <div class="footer_info">
-                        <p>2020-2021 <br> Жамбыл Инновациялық <br> Жоғары Колледжі</p>
-                    </div>
-                    <div class="footer_info">
-                        <p>ҚР, Жамбыл Облысы, Тараз Қаласы, <br> Пушкин көшесі, 154</p>
-                    </div>
-                    <div class="footer_info">
-                        <p>Колледж қабылдау бөлімінің <br> байланыс телефоны: <br>+77262430713, +77477802727</p>
-                    </div>
-                </div>
-                <div class="footer_socials">
-                    <div class="footer_icon">
-                        <a href="">
-                            <img src="{% static 'img/facebook_icon.svg'%}" alt="">
-                        </a>
-                    </div>
-                    <div class="footer_icon">
-                        <a href="">
-                            <img src="{% static 'img/whatsapp_icon.svg'%}" alt="">
-                        </a>
-                    </div>
-                    <div class="footer_icon">
-                        <a href="">
-                            <img src="{% static 'img/instagram_icon.svg'%}" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    {%endblock%}
-
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-    <script src="{% static 'js/script.js'%}"></script>
-
+</footer>
+{%endblock%} {%block script%}
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="{% static 'js/script.js'%}"></script>
+{%endblock%}
 </body>
 
 </html>

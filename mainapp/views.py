@@ -42,7 +42,7 @@ def index_page(request):
     shortPost = NewsShortPost.objects.order_by('-id')[:2]
     longPost = NewsLongPost.objects.all()
     dropdown = NavList.objects.all()
-    return render(request, 'index.html', {'dropdown':dropdown,'talapker': talapker,'slider': slider,'bigPost': bigPost.last(),'shortPost':shortPost,'longPost':longPost.last()})
+    return render(request, 'index.html', {'dropdown':dropdown,'talapker': talapker,'slider': slider,'bigPost': bigPost.last(),'shortPost':shortPost,'longPost':longPost.last(), 'lang': 'kz',})
 
 def news_page(request):
     dropdown = NavList.objects.all()
@@ -114,3 +114,14 @@ def valounter_page(request):
     video = ValounterVideo.objects.all()
     dropdown = NavList.objects.all()
     return render(request,'valounter.html',{'dropdown':dropdown,'video':video.last()})
+
+
+def kz_page(request):
+
+    return render(request, '')
+def ru_page(request):
+
+    return render(request, '')
+def en_page(request):
+
+    return render(request, '')
