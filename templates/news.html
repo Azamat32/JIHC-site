@@ -193,7 +193,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="main_news_pagingation">
+                    <!-- <div class="main_news_pagingation">
                         <button class="prev_bullet">
                             
                         </button>
@@ -211,12 +211,12 @@
                         <button class="next_bullet active">
                             
                         </button>
-                    </div>
+                    </div> -->
                     {%endfor%}
                     <div class="news_pagination">
                         {% if page.has_previous %}
-                        <a href="{% url 'news'%}?page={{page.previous_page_number}}">Previous Page</a> {%endif%} {%if page.has_next%}
-                        <a href="{% url 'news'%}?page={{page.next_page_number}}">Next Page</a> {%endif%}
+                        <a href="{% url 'news'%}?page={{page.previous_page_number}}" class="news_prev_btn">Алдынғы бет</a> {%endif%} {%if page.has_next%}
+                        <a href="{% url 'news'%}?page={{page.next_page_number}}" class="news_next_btn">Келесі бет</a> {%endif%}
                     </div>
                 </div>
                 

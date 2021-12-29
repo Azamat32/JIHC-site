@@ -940,6 +940,53 @@ img {
     }
 }
 
+.news_pagination{
+    display: flex;
+    justify-content: center;
+}
+
+.news_prev_btn{
+    color: #007074;
+    position: relative;
+}
+
+.news_prev_btn:before{
+    content: "";
+    position: absolute;
+    height: 1.5px;
+    background: #007074;
+    opacity: 0;
+    bottom: -3px;
+    width: 100%;
+    transition: all .4s ease 0s;
+}
+
+.news_prev_btn:hover:before{
+    width: 100%;
+    opacity: 1;
+}
+
+.news_next_btn{
+    color: #007074;
+    position: relative;
+}
+
+.news_next_btn:before{
+    content: "";
+    position: absolute;
+    height: 1.5px;
+    background: #007074;
+    opacity: 0;
+    bottom: -3px;
+    width: 100%;
+    transition: all .4s ease 0s;
+}
+
+.news_next_btn:hover:before{
+    width: 100%;
+    opacity: 1;
+}
+
 .news-sinlge__title {
     margin-bottom: 30px;
 }
@@ -1599,54 +1646,28 @@ img {
     width: 100%;
 }
 
-.flex_clubs_item-content {
+.clubs_btn{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
-@media (max-width: 781px) {
-    .flex_clubs_item-content {
-        flex-direction: column;
-    }
-}
-
-.flex_clubs_item-text {
-    width: 50%;
-    margin-right: 20px;
-}
-
-@media (max-width: 781px) {
-    .flex_clubs_item-text {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 30px;
-    }
-}
-
-.flex_clubs_item-video {
-    width: 45%;
-}
-
-@media (max-width: 979px) {
-    .flex_clubs_item-video {
-        width: 55%;
-    }
-}
-
-@media (max-width: 781px) {
-    .flex_clubs_item-video {
-        width: 100%;
-    }
-}
-
-.flex_clubs_item-video video {
-    width: 100%;
+.clubs_join-btn{
+    padding: 10px 40px;
+    background: #007074;
+    color: #FFF;
     border-radius: 5px;
-    -o-object-fit: cover;
-    object-fit: cover;
-    height: 350px;
-    margin-bottom: 30px;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    border: 1px solid #007074;
+    font-size: 16px;
+    margin-top: 15px;
 }
+
+.clubs_join-btn:hover {
+    background: #FFF;
+    color: #007074;
+}
+
 
 .video_section {
     margin-top: 100px;

@@ -12,6 +12,11 @@
                 <div class="navbar_burger">
                     <span></span>
                 </div>
+                <div class="navbar_language">
+                    <button class="navbar_language">Қаз</button>
+                    <button class="navbar_language">Рус</button>
+                    <button class="navbar_language">Eng</button>
+                </div>
             </div>
             <ul class="navbar_nav">
                 <li class="navbar_nav-list">
@@ -23,20 +28,9 @@
                     <a href="{% url 'news'%}" class="navbar_nav-link">
                         Жаңалықтар
                     </a>
-<<<<<<< HEAD
-                    </li>
-                    <li class="navbar_nav-list dropdown">
-                        <a href="{% url 'talapker'%}" class="navbar_nav-link">
-=======
-                </li>
-                <li class="navbar_nav-list">
-                    <a href="{% url 'about'%}" class="navbar_nav-link">
-                        Біз туралы
-                    </a>
                 </li>
                 <li class="navbar_nav-list dropdown">
                     <a href="{% url 'talapker'%}" class="navbar_nav-link">
->>>>>>> 0f1cb47eeeb1c83155cd20c1fab4e58889be3550
                         Талапкерге
                         <i class="fas fa-angle-down"></i>
                     </a>
@@ -50,23 +44,15 @@
                             </a>
                         </li>
                         {% endfor%}
-
-<<<<<<< HEAD
-                        </ul>
-                    </li>
-                    <li class="navbar_nav-list">
-                        <a href="{% url 'about'%}" class="navbar_nav-link">
+                    </ul>
+                </li>
+                <li class="navbar_nav-list">
+                    <a href="{% url 'about'%}" class="navbar_nav-link">
                         Біз туралы
                     </a>
-                    </li>
-                    <li class="navbar_nav-list dropdown">
-                        <a href="{% url 'student'%}" class="navbar_nav-link">
-=======
-                    </ul>
                 </li>
                 <li class="navbar_nav-list dropdown">
                     <a href="{% url 'student'%}" class="navbar_nav-link">
->>>>>>> 0f1cb47eeeb1c83155cd20c1fab4e58889be3550
                         Студенттерге
                         <i class="fas fa-angle-down"></i>
                     </a>
@@ -219,7 +205,6 @@
                     <div class="swiper swiper_slider-intro">
                         <div class="swiper-wrapper">
 
-<<<<<<< HEAD
                                 {% for slide in slider %}
                                 <div class="swiper-slide">
                                     <img src="{{slide.img.url}}" alt="">
@@ -227,11 +212,9 @@
                                     <a href="" class="swiper-slide-link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, eum!</a>
                                 </div>
                                 {% endfor %}
-=======
                             {% for slide in slider %}
                             <div class="swiper-slide">
                                 <img src="{{slide.img.url}}" alt="">
->>>>>>> 0f1cb47eeeb1c83155cd20c1fab4e58889be3550
                             </div>
                             {% endfor %}
                         </div>
