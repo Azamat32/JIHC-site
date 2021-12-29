@@ -168,7 +168,7 @@
 
                 </aside>
                 <div class="main_news_content">
-                    {%for el in newsPost%}
+                    {%for el in page.object_list%}
                     <div class="news_single_block">
                         <div class="news_single_block_header">
                             <div class="news_single_header-img">
@@ -195,6 +195,11 @@
                         </div>
                     </div>
                     {%endfor%}
+                    <div class="news_pagination">
+                        {% if page.has_previous %}
+                        <a href="{% url 'news'%}?page={{page.previous_page_number}}">Previous Page</a> {%endif%} {%if page.has_next%}
+                        <a href="{% url 'news'%}?page={{page.next_page_number}}">Next Page</a> {%endif%}
+                    </div>
                 </div>
             </div>
         </div>
