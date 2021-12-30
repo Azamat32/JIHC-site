@@ -54,12 +54,12 @@
                 <ul class="navbar_nav">
                     <li class="navbar_nav-list">
                         <a href="{% url 'index'%}" class="navbar_nav-link ">
-                        Басты
+                        {%trans 'Басты'%}
                     </a>
                     </li>
                     <li class="navbar_nav-list">
                         <a href="{% url 'news'%}" class="navbar_nav-link active">
-                        Жаңалықтар
+                            {%trans 'Жаңалықтар'%}
                     </a>
                     </li>
                     <li class="navbar_nav-list">
@@ -233,7 +233,7 @@
                         <a href="{% url 'news'%}?page={{page.next_page_number}}" class="news_next_btn">Келесі бет</a> {%endif%}
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
