@@ -948,6 +948,7 @@ img {
 .news_prev_btn{
     color: #007074;
     position: relative;
+    margin-right: 15px;
 }
 
 .news_prev_btn:before{
@@ -969,6 +970,7 @@ img {
 .news_next_btn{
     color: #007074;
     position: relative;
+    margin-left: 15px;
 }
 
 .news_next_btn:before{
@@ -1611,7 +1613,8 @@ img {
 }
 
 .clubs_item {
-    margin-bottom: 50px;
+    margin-bottom:25px;
+    margin-top: 25px;
 }
 
 .clubs_item-title {
@@ -1888,6 +1891,7 @@ img {
     color: #FFF;
     font-size: 20px;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .contact_item-text a {
@@ -1895,6 +1899,27 @@ img {
     font-size: 20px;
     font-weight: 600;
 }
+.map_link{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    margin-top: 10px;
+}
+
+.map_link::before{
+    content: "";
+    position: absolute;
+    height: 1.5px;
+    width: 100%;
+    bottom: -5px;
+    background: #ffffff;
+}
+
+.map_link i{
+    padding-right: 10px;
+}
+
 
 .footer_contact {
     background: #FFF;
