@@ -3,6 +3,7 @@ from .models import *
 from django.views.generic import ListView, DetailView
 from django.core.paginator import Paginator
 # Create your views here.
+from django.templatetags import i18n
 class MonthPostDetailView(DetailView):
     pass
 
@@ -36,13 +37,14 @@ def news_single_page(request):
     dropdown = NavList.objects.all()
     return render(request, 'news-single.html', {'dropdown':dropdown})
 def index_page(request):
+    
     talapker = TalapkerPost.objects.order_by('-id')[:3]
     slider = SwiperImg.objects.order_by('-id')[:6]
     bigPost = NewsBigPost.objects.all()
     shortPost = NewsShortPost.objects.order_by('-id')[:2]
     longPost = NewsLongPost.objects.all()
     dropdown = NavList.objects.all()
-    return render(request, 'index.html', {'dropdown':dropdown,'talapker': talapker,'slider': slider,'bigPost': bigPost.last(),'shortPost':shortPost,'longPost':longPost.last(), 'lang': 'kz',})
+    return render(request, 'index.html', {'dropdown':dropdown,'talapker': talapker,'slider': slider,'bigPost': bigPost.last(),'shortPost':shortPost,'longPost':longPost.last()})
 
 def news_page(request):
     dropdown = NavList.objects.all()

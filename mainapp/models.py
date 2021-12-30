@@ -69,11 +69,9 @@ class NewsPostForm(models.Model):
     date = models.DateField()
     slug = models.SlugField(default='',unique=True)
     
-    descriptionKZ = models.TextField(max_length=900,default='')
+    description = models.TextField(max_length=900,default='')
     
-    descriptionRU = models.TextField(max_length=900,default='')
 
-    descriptionEN = models.TextField(max_length=900,default='')
 
     def __str__(self):
         return " {} ".format(self.title)
