@@ -17,13 +17,15 @@ const swiper = new Swiper('.swiper_slider-intro', {
     loop: true,
     spaceBetween: 30,
     slidesPerView: 1,
+    clickable:true,
 
     autoplay: {
-        delay: 1500,
+        delay: 4000,
     },
     // If we need pagination
     pagination: {
         el: '.swiper-pagination',
+        clickable: true,
     },
 
     // Navigation arrows
