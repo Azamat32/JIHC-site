@@ -204,6 +204,41 @@ img {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    align-items: center;
+}
+
+.navbar_language {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+@media (max-width: 359px) {
+    .navbar_language {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 80px;
+    }
+}
+
+.navbar_lang-link {
+    color: #fff;
+    padding: 2px 5px;
+    border: #fff 2px solid;
+    border-radius: 5px;
+    transition: ease 0.3s;
+    margin-right: 8px;
+}
+
+@media (max-width: 359px) {
+    .navbar_lang-link {
+        margin-bottom: 5px;
+    }
+}
+
+.navbar_lang-link:hover {
+    color: #007074;
+    border: #FFF 2px solid;
+    background-color: #fff;
 }
 
 @media (max-width: 979px) {
@@ -618,7 +653,6 @@ img {
 
 .main_featurs_icon-item {}
 
-
 .main_featurs_icon {
     display: flex;
     justify-content: center;
@@ -742,7 +776,7 @@ img {
     background: #FFF !important;
 }
 
-.swiper-slide-link{
+.swiper-slide-link {
     font-size: 20px;
     position: absolute;
     z-index: 1000;
@@ -940,18 +974,18 @@ img {
     }
 }
 
-.news_pagination{
+.news_pagination {
     display: flex;
     justify-content: center;
 }
 
-.news_prev_btn{
+.news_prev_btn {
     color: #007074;
     position: relative;
     margin-right: 15px;
 }
 
-.news_prev_btn:before{
+.news_prev_btn:before {
     content: "";
     position: absolute;
     height: 1.5px;
@@ -962,18 +996,18 @@ img {
     transition: all .4s ease 0s;
 }
 
-.news_prev_btn:hover:before{
+.news_prev_btn:hover:before {
     width: 100%;
     opacity: 1;
 }
 
-.news_next_btn{
+.news_next_btn {
     color: #007074;
     position: relative;
     margin-left: 15px;
 }
 
-.news_next_btn:before{
+.news_next_btn:before {
     content: "";
     position: absolute;
     height: 1.5px;
@@ -984,7 +1018,7 @@ img {
     transition: all .4s ease 0s;
 }
 
-.news_next_btn:hover:before{
+.news_next_btn:hover:before {
     width: 100%;
     opacity: 1;
 }
@@ -1017,6 +1051,12 @@ img {
     }
 }
 
+@media (max-width: 359px) {
+    .features_row {
+        grid-template-columns: repeat(auto-fill, 100%);
+    }
+}
+
 .features_card {
     overflow: hidden;
     border-radius: 5px;
@@ -1031,6 +1071,13 @@ img {
     object-fit: cover;
     min-height: 290px;
     height: 350px;
+}
+
+@media (max-width: 359px) {
+    .features_card-img img {
+        height: 100%;
+        min-height: 250px;
+    }
 }
 
 .features_card-info {
@@ -1613,7 +1660,7 @@ img {
 }
 
 .clubs_item {
-    margin-bottom:25px;
+    margin-bottom: 25px;
     margin-top: 25px;
 }
 
@@ -1649,12 +1696,12 @@ img {
     width: 100%;
 }
 
-.clubs_btn{
+.clubs_btn {
     display: flex;
     justify-content: flex-end;
 }
 
-.clubs_join-btn{
+.clubs_join-btn {
     padding: 10px 40px;
     background: #007074;
     color: #FFF;
@@ -1670,7 +1717,6 @@ img {
     background: #FFF;
     color: #007074;
 }
-
 
 .video_section {
     margin-top: 100px;
@@ -1899,7 +1945,8 @@ img {
     font-size: 20px;
     font-weight: 600;
 }
-.map_link{
+
+.map_link {
     color: #fff;
     font-size: 20px;
     font-weight: 600;
@@ -1907,7 +1954,7 @@ img {
     margin-top: 10px;
 }
 
-.map_link::before{
+.map_link::before {
     content: "";
     position: absolute;
     height: 1.5px;
@@ -1916,10 +1963,9 @@ img {
     background: #ffffff;
 }
 
-.map_link i{
+.map_link i {
     padding-right: 10px;
 }
-
 
 .footer_contact {
     background: #FFF;
@@ -1983,8 +2029,6 @@ img {
 .calendar-list {
     margin: 100px 0;
 }
-
-
 
 .footer {
     background: #007074;

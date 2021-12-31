@@ -28,21 +28,27 @@
             <div class="header__body">
                 <div class="navbar_top">
                     <div class="navbar_logo">
-                        {% get_current_language as LANGUAGE_CODE %}
-                        {% get_available_languages as LANGUAGES %}
-                        {% get_language_info_list for LANGUAGES as languages %}
-                        {% for language in languages %}
-                        <a href="/{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                            {{ language.code }}
+
+                        <a href="">
+                            <img src="{% static 'img/header_Logo.svg'%}" alt="">
                         </a>
-                    {% endfor %}
-                    <a href="">
-                        <img src="{% static 'img/header_Logo.svg'%}" alt="">
-                    </a>
-                    
-                </div>
+
+                    </div>
                     <div class="navbar_burger">
                         <span></span>
+                    </div>
+                    <!-- /set_language -->
+                    <div class="navbar_language">
+
+                        <a href="{% url 'set_language' %}">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                       <a href="/{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                     {{ language.code }}
+                                       </a> {% endfor %}
+                        </a>
                     </div>
                 </div>
                 <ul class="navbar_nav">

@@ -2,6 +2,7 @@ const burgerMenu = document.querySelector('.navbar_burger'); //выбрать г
 const menuList = document.querySelector('.navbar_nav'); //родительский элемент листа меню
 const body = document.querySelector('body'); //это просто body для фиксации
 const links = document.querySelectorAll('navbar_nav-link'); // ссылки меню
+const navbar_language = document.querySelector('.navbar_language');
 
 
 
@@ -9,6 +10,7 @@ burgerMenu.onclick = function showBurger() {
     this.classList.toggle('activeBurger');
     menuList.classList.toggle('activeBurger');
     body.classList.toggle('lockScroll');
+    navbar_language.classList.toggle('activeBurger');
 };
 
 const swiper = new Swiper('.swiper_slider-intro', {
@@ -17,7 +19,7 @@ const swiper = new Swiper('.swiper_slider-intro', {
     loop: true,
     spaceBetween: 30,
     slidesPerView: 1,
-    clickable:true,
+    clickable: true,
 
     autoplay: {
         delay: 4000,

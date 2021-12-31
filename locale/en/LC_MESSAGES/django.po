@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-30 10:44+0600\n"
+"POT-Creation-Date: 2021-12-30 18:58+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
 
 #: .\jihc_site2\settings.py:119
 msgid "Kazakh"
@@ -31,6 +30,65 @@ msgstr "русский"
 msgid "English"
 msgstr "English"
 
-#: .\templates\news.html:57
+#: .\templates\index.html:34 .\templates\news.html:57
 msgid "Басты"
 msgstr "Main"
+
+#: .\templates\index.html:38 .\templates\index.html:209
+#: .\templates\news.html:62
+msgid "Жаңалықтар"
+msgstr "News"
+
+#: .\templates\index.html:43
+msgid "Талапкерге"
+msgstr ""
+
+#: .\templates\index.html:65
+msgid "Студенттерге"
+msgstr ""
+
+#: .\templates\index.html:73
+msgid "Студенттік өмір"
+msgstr ""
+
+#: .\templates\index.html:78
+msgid "Ар-намыс кодексі"
+msgstr ""
+
+#: .\templates\index.html:83
+msgid "Ата-аналарға"
+msgstr ""
+
+#: .\templates\index.html:123
+msgid "Біздің көзқарастарымыз бен мақсаттарымыз"
+msgstr ""
+
+#: .\templates\index.html:129
+msgid "Оқу туралы көзқарастар"
+msgstr ""
+
+#: .\templates\index.html:140
+#, fuzzy
+#| msgid "Басты"
+msgid "Басты мақсат"
+msgstr "Main"
+
+#: .\templates\index.html:172
+msgid "Принциптер мен этика"
+msgstr ""
+
+#: .\templates\index.html:180
+msgid "Бәсекелестік"
+msgstr ""
+
+#: .\templates\index.html:188
+msgid "Таңдауға көмектесу"
+msgstr ""
+
+#: .\templates\index.html:196
+msgid "Әр түрлі оқу орындарының мұғалімдері"
+msgstr ""
+
+#: .\templates\index.html:307
+msgid "ТАЛАПКЕРГЕ"
+msgstr ""

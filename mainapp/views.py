@@ -47,6 +47,7 @@ def index_page(request):
     return render(request, 'index.html', {'dropdown':dropdown,'talapker': talapker,'slider': slider,'bigPost': bigPost.last(),'shortPost':shortPost,'longPost':longPost.last()})
 
 def news_page(request):
+    
     dropdown = NavList.objects.all()
     newsPost = NewsPostForm.objects.all()
     news_paginator = Paginator(newsPost, 2)

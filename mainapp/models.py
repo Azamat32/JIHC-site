@@ -11,6 +11,7 @@ from unidecode import unidecode
 class SwiperImg(models.Model):
 
     img = models.ImageField(upload_to="gallery")
+    description = models.TextField(max_length=150,default='')
 
 
 class Post(models.Model):

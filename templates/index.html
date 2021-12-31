@@ -6,39 +6,45 @@
         <div class="header__body">
             <div class="navbar_top">
                 <div class="navbar_logo">
-                    <{% get_current_language as LANGUAGE_CODE %}
-                     {% get_available_languages as LANGUAGES %}
-                     {% get_language_info_list for LANGUAGES as languages %}
-                     {% for language in languages %}
-                        <a href="/{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                            {{ language.code }}
-                        </a>
-                    {% endfor %}
+
                     <a href="{% url 'index'%}">
                         <img src="{% static 'img/header_Logo.svg'%}" alt="">
                     </a>
-                    
+
                 </div>
+
+                <div class="navbar_language">
+
+                    <a href="{% url 'set_language' %}">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                                   <a href="/{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %} class="navbar_lang-link">
+                                 {{ language.code }}
+                                   </a> {% endfor %}
+                    </a>
+                </div>
+
                 <div class="navbar_burger">
                     <span></span>
                 </div>
-                <div class="navbar_language">
-                </div>
+
+
             </div>
             <ul class="navbar_nav">
                 <li class="navbar_nav-list">
                     <a href="{% url 'index'%}" class="navbar_nav-link active">
-                        Басты
-                    </a>
+                        {%trans 'Басты'%}                    </a>
                 </li>
                 <li class="navbar_nav-list">
                     <a href="{% url 'news'%}" class="navbar_nav-link">
-                        Жаңалықтар
+                        {%trans 'Жаңалықтар'%}
                     </a>
                 </li>
                 <li class="navbar_nav-list dropdown">
                     <a href="{% url 'talapker'%}" class="navbar_nav-link">
-                        Талапкерге
+                        {%trans 'Талапкерге'%}
                         <i class="fas fa-angle-down"></i>
                     </a>
                     <span class="hidden"><i class="fas fa-plus"></i></span>
@@ -55,12 +61,12 @@
                 </li>
                 <li class="navbar_nav-list">
                     <a href="{% url 'about'%}" class="navbar_nav-link">
-                        Біз туралы
+                      {% trans 'Біз туралы'%}
                     </a>
                 </li>
                 <li class="navbar_nav-list dropdown">
                     <a href="{% url 'student'%}" class="navbar_nav-link">
-                        Студенттерге
+                        {%trans 'Студенттерге'%}
                         <i class="fas fa-angle-down"></i>
                     </a>
                     <span class="hidden"><i class="fas fa-plus"></i></span>
@@ -68,44 +74,44 @@
                     <ul class="navbar_sub-nav">
                         <li class="navbar_sub_nav-list">
                             <a href="{% url 'student_life'%}" class="navbar_sub_nav-link">
-                                Студенттік өмір
+                                {% trans 'Студенттік өмір'%}
                             </a>
                         </li>
                         <li class="navbar_sub_nav-list">
                             <a href="{% url 'kodeks'%}" class="navbar_sub_nav-link">
-                                Ар-намыс кодексі
+                                {% trans 'Ар-намыс кодексі'%}
                             </a>
                         </li>
                         <li class="navbar_sub_nav-list">
                             <a href="{% url 'for_parent'%}">
-                                Ата-аналарға
+                                {%trans 'Ата-аналарға'%}
                             </a>
                         </li>
                         <li class="navbar_sub_nav-list">
                             <a href="{% url 'clubs'%}" class="navbar_sub_nav-link">
-                                Үйірмелер
+                               {% trans ' Үйірмелер'%}
                             </a>
                         </li>
                         <li class="navbar_sub_nav-list">
                             <a href="{% url 'valounter'%}" class="navbar_sub_nav-link">
-                                Еріктілер
+                                {% trans 'Еріктілер'%}
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="navbar_nav-list">
                     <a href="{% url 'gallery'%}" class="navbar_nav-link">
-                        Галерея
+                        {% trans 'Галерея'%}
                     </a>
                 </li>
                 <li class="navbar_nav-list">
                     <a href="{% url 'contact'%}" class="navbar_nav-link">
-                        Байланыс
+                        {% trans 'Байланыс'%}
                     </a>
                 </li>
                 <li class="navbar_nav-list">
                     <a href="{% url 'calendar'%}" class="navbar_nav-link">
-                        Күнтізбе
+                        {% trans 'Күнтізбе'%}
                     </a>
                 </li>
             </ul>
@@ -118,13 +124,13 @@
         <div class="main_features__body">
             <div class="main_features-title">
                 <h3 class="main_title">
-                    Наши взгляды и Цели
+                    {% trans 'Біздің көзқарастарымыз бен мақсаттарымыз'%}
                 </h3>
             </div>
             <div class="main_features_top">
                 <div class="main_features_top-item">
                     <div class="main_features_text-title text_left">
-                        <h3>Взгляды на обучение</h3>
+                        <h3>{%trans 'Оқу туралы көзқарастар'%}</h3>
                     </div>
                     <div class="main_features-text text_left">
                         <p>
@@ -135,7 +141,7 @@
                 </div>
                 <div class="main_features_top-item">
                     <div class="main_features_text-title text_right">
-                        <h3>Главная цель</h3>
+                        <h3>{% trans 'Басты мақсат'%}</h3>
                     </div>
                     <div class="main_features-text text_right">
                         <p>
@@ -151,7 +157,7 @@
                         <img src="../static/img/main_features_icon-1.svg" alt="">
                     </div>
                     <div class="main_featurs_icon-text">
-                        <p>Креативность</p>
+                        <p>{% trans 'Шығармашылық'%}</p>
                     </div>
                 </div>
                 <div class="main_featurs_icon-item">
@@ -159,7 +165,7 @@
                         <img src="../static/img/main_features_icon-2.svg" alt="">
                     </div>
                     <div class="main_featurs_icon-text">
-                        <p>Высокие цели</p>
+                        <p>{% trans 'Биік мақсаттар'%}</p>
                     </div>
                 </div>
                 <div class="main_featurs_icon-item">
@@ -167,7 +173,7 @@
                         <img src="../static/img/main_features_icon-3.svg" alt="">
                     </div>
                     <div class="main_featurs_icon-text">
-                        <p>Принципы и этика</p>
+                        <p>{% trans "Принциптер мен этика"%}</p>
                     </div>
                 </div>
                 <div class="main_featurs_icon-item">
@@ -175,7 +181,7 @@
                         <img src="../static/img/main_features_icon-4.svg" alt="">
                     </div>
                     <div class="main_featurs_icon-text">
-                        <p>Соперничество</p>
+                        <p>{% trans "Бәсекелестік"%}</p>
                     </div>
                 </div>
                 <div class="main_featurs_icon-item">
@@ -183,7 +189,7 @@
                         <img src="../static/img/main_features_icon-5.svg" alt="">
                     </div>
                     <div class="main_featurs_icon-text">
-                        <p>Помощь в выборе</p>
+                        <p>{% trans "Таңдауға көмектесу"%}</p>
                     </div>
                 </div>
                 <div class="main_featurs_icon-item">
@@ -191,7 +197,7 @@
                         <img src="../static/img/main_features_icon-6.svg" alt="">
                     </div>
                     <div class="main_featurs_icon-text">
-                        <p>Учителя из разных учереждений</p>
+                        <p>{% trans "Әр түрлі оқу орындарының мұғалімдері"%}</p>
                     </div>
                 </div>
             </div>
@@ -204,7 +210,7 @@
         <div class="intro__body">
             <div class="intro_title">
                 <h3 class="hypertitle">
-                    <a href="">Жаналықтар</a>
+                    <a href="">  {%trans 'Жаңалықтар'%}</a>
                 </h3>
             </div>
             <div class="intro_sliper-container">
@@ -212,16 +218,11 @@
                     <div class="swiper swiper_slider-intro">
                         <div class="swiper-wrapper">
 
-                                {% for slide in slider %}
-                                <div class="swiper-slide">
-                                    <img src="{{slide.img.url}}" alt="">
-                                    <div class="slide-bg"></div>
-                                    <a href="" class="swiper-slide-link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, eum!</a>
-                                </div>
-                                {% endfor %}
                             {% for slide in slider %}
                             <div class="swiper-slide">
                                 <img src="{{slide.img.url}}" alt="">
+                                <div class="slide-bg"></div>
+                                <a href="" class="swiper-slide-link">{{slide.description}}</a>
                             </div>
                             {% endfor %}
                         </div>
@@ -307,7 +308,7 @@
         <div class="features__body">
             <div class="features_title">
                 <h3 class="hypertitle">
-                    <a href="">ТАЛАПКЕРГЕ</a>
+                    <a href="">{% trans "ТАЛАПКЕРГЕ"%}</a>
                 </h3>
             </div>
             <div class="features_row">
@@ -318,7 +319,7 @@
                         <img src="{{el.img.url}}" alt="">
                     </div>
                     <div class="features_card-info">
-                        <p> {% if lang == 'kz' %}{{el.description}}{% endif %}</p>
+                        <p> {{el.description}}</p>
                     </div>
 
                 </div>
