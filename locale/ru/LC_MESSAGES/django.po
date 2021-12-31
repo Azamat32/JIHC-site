@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-30 18:58+0600\n"
+"POT-Creation-Date: 2021-12-31 11:02+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,65 +32,111 @@ msgstr "русский"
 msgid "English"
 msgstr "English"
 
-#: .\templates\index.html:34 .\templates\news.html:57
+#: .\templates\index.html:38 .\templates\news.html:57
 msgid "Басты"
 msgstr "Главная"
 
-#: .\templates\index.html:38 .\templates\index.html:209
+#: .\templates\index.html:42 .\templates\index.html:213
 #: .\templates\news.html:62
 msgid "Жаңалықтар"
-msgstr ""
+msgstr "Новости"
 
-#: .\templates\index.html:43
+#: .\templates\index.html:47
 msgid "Талапкерге"
-msgstr ""
+msgstr "Заявителю"
 
-#: .\templates\index.html:65
+#: .\templates\index.html:64
+msgid "Біз туралы"
+msgstr "О нас"
+
+#: .\templates\index.html:69
 msgid "Студенттерге"
-msgstr ""
+msgstr "Студентам"
 
-#: .\templates\index.html:73
+#: .\templates\index.html:77
 msgid "Студенттік өмір"
-msgstr ""
+msgstr "Студенческая жизнь"
 
-#: .\templates\index.html:78
+#: .\templates\index.html:82
 msgid "Ар-намыс кодексі"
-msgstr ""
+msgstr "Кодек чести"
 
-#: .\templates\index.html:83
+#: .\templates\index.html:87
 msgid "Ата-аналарға"
-msgstr ""
+msgstr "Для родителей"
 
-#: .\templates\index.html:123
+#: .\templates\index.html:92
+msgid " Үйірмелер"
+msgstr "Клубы"
+
+#: .\templates\index.html:97
+msgid "Еріктілер"
+msgstr "Валонтеры"
+
+#: .\templates\index.html:104
+msgid "Галерея"
+msgstr "Галерея"
+
+#: .\templates\index.html:109
+msgid "Байланыс"
+msgstr "Контакты"
+
+#: .\templates\index.html:114
+msgid "Күнтізбе"
+msgstr "Календарь"
+
+#: .\templates\index.html:127
 msgid "Біздің көзқарастарымыз бен мақсаттарымыз"
-msgstr ""
+msgstr "Наше видение и цели"
 
-#: .\templates\index.html:129
+#: .\templates\index.html:133
 msgid "Оқу туралы көзқарастар"
-msgstr ""
+msgstr "Видение на счет учебы"
 
-#: .\templates\index.html:140
-#, fuzzy
-#| msgid "Басты"
+#: .\templates\index.html:144
 msgid "Басты мақсат"
-msgstr "Главная"
+msgstr "Главная цель"
 
-#: .\templates\index.html:172
+#: .\templates\index.html:160
+msgid "Шығармашылық"
+msgstr "Грамотность"
+
+#: .\templates\index.html:168
+msgid "Биік мақсаттар"
+msgstr "Главная цель"
+
+#: .\templates\index.html:176
 msgid "Принциптер мен этика"
-msgstr ""
+msgstr "Принципы и этика"
 
-#: .\templates\index.html:180
+#: .\templates\index.html:184
 msgid "Бәсекелестік"
-msgstr ""
+msgstr "Конкуренция"
 
-#: .\templates\index.html:188
+#: .\templates\index.html:192
 msgid "Таңдауға көмектесу"
-msgstr ""
+msgstr "Помочь с выбором"
 
-#: .\templates\index.html:196
+#: .\templates\index.html:200
 msgid "Әр түрлі оқу орындарының мұғалімдері"
-msgstr ""
+msgstr "Учителя с разных стран"
 
-#: .\templates\index.html:307
+#: .\templates\index.html:311
 msgid "ТАЛАПКЕРГЕ"
-msgstr ""
+msgstr "ЗАЯВИТЕЛЮ"
+
+#: .\templates\index.html:350
+
+msgid "2020-2021 Жамбыл Инновациялық Жоғары Колледжі"
+msgstr "2020-2021  Жамбылский инновационно-высший колледж"
+
+#: .\templates\index.html:353
+
+msgid "ҚР, Жамбыл Облысы, Тараз Қаласы, Пушкин көшесі, 154"
+msgstr "РК, Жамбылская область, г. Тараз, ул. Пушкина, 154"
+
+#: .\templates\index.html:356
+
+msgid ""
+"Колледж қабылдау бөлімінің байланыс телефоны: +77262430713, +77477802727"
+msgstr "Номер для связи: +77262430713, +77477802727"

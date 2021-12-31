@@ -217,7 +217,7 @@ img {
         display: flex;
         flex-wrap: wrap;
         max-width: 80px;
-    }
+    } 
 }
 
 .navbar_lang-link {
