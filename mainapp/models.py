@@ -11,7 +11,10 @@ from unidecode import unidecode
 class SwiperImg(models.Model):
 
     img = models.ImageField(upload_to="gallery")
-    description = models.TextField(max_length=150,default='')
+    description = models.TextField(max_length=100,default='')
+class SwiperVideo(models.Model):
+    video = models.FileField(upload_to='videos_uploaded',null=True,validators=[FileExtensionValidator(allowed_extensions=['MOV','avi','mp4','webm','mkv'])])
+
 
 
 class Post(models.Model):
@@ -50,9 +53,8 @@ class NewsShortPost(Post):
 class NavList(models.Model):
     title = models.CharField(max_length=20 , default='')
     slug = models.SlugField(default='',unique=True)
-    descriptionKZ = models.TextField(max_length=800,default='',verbose_name=' Первый абзац на казахском')
-    descriptionRU = models.TextField(max_length=800,default='',verbose_name=' Первый абзац на русском')
-    descriptionEN = models.TextField(max_length=800,default='',verbose_name=' Первый абзац на английском')
+    description = models.TextField(max_length=800,default='',verbose_name=' Первый абзац ')
+    
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(NavList, self).save(*args, **kwargs)

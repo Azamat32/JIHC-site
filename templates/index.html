@@ -222,9 +222,17 @@
                             <div class="swiper-slide">
                                 <img src="{{slide.img.url}}" alt="">
                                 <div class="slide-bg"></div>
-                                <a href="" class="swiper-slide-link">{{slide.description}}</a>
+                                <a href="{% url 'news'%}" class="swiper-slide-link">{{slide.description}}</a>
                             </div>
                             {% endfor %}
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-video">
+                                    <video class="swiper-slide-video-item" controls autoplay loop playsinline muted>
+                                        <source src="{{sliderVideo.video.url}}">
+                                    </video>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="swiper-pagination"></div>
 

@@ -31,7 +31,7 @@ admin.site.register(NewsLongPost)
 admin.site.register(NewsShortPost)
 admin.site.register(NavList)
 admin.site.register(NewsPostForm,NewsAdmin)
-
+admin.site.register(SwiperVideo)
 admin.site.register(Gallery)
 admin.site.register(TalapkerPageTable)
 admin.site.register(StudentPageForm)

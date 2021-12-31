@@ -1,4 +1,4 @@
-{%load static%}
+{%load static%} {% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +32,20 @@
                             <img src="{% static 'img/header_Logo.svg'%}" alt="">
                         </a>
                     </div>
+
+                    <div class="navbar_language">
+
+                        <a href="{% url 'set_language' %}">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                       <a href="/{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %} class="navbar_lang-link">
+                                     {{ language.code }}
+                                       </a> {% endfor %}
+                        </a>
+                    </div>
+
                     <div class="navbar_burger">
                         <span></span>
                     </div>

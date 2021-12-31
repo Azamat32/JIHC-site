@@ -217,7 +217,7 @@ img {
         display: flex;
         flex-wrap: wrap;
         max-width: 80px;
-    } 
+    }
 }
 
 .navbar_lang-link {
@@ -676,6 +676,16 @@ img {
 
 .intro_title {
     margin-bottom: 30px;
+}
+
+.swiper-slide-video {
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-slide video {
+    width: 80%;
+    height: 85%;
 }
 
 .hypertitle {

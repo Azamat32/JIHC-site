@@ -44,7 +44,8 @@ def index_page(request):
     shortPost = NewsShortPost.objects.order_by('-id')[:2]
     longPost = NewsLongPost.objects.all()
     dropdown = NavList.objects.all()
-    return render(request, 'index.html', {'dropdown':dropdown,'talapker': talapker,'slider': slider,'bigPost': bigPost.last(),'shortPost':shortPost,'longPost':longPost.last()})
+    sliderVideo = SwiperVideo.objects.all()
+    return render(request, 'index.html', {'sliderVideo':sliderVideo.last(),'dropdown':dropdown,'talapker': talapker,'slider': slider,'bigPost': bigPost.last(),'shortPost':shortPost,'longPost':longPost.last()})
 
 def news_page(request):
     
