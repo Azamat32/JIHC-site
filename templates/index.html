@@ -2,248 +2,253 @@
 
 <!-- Navbar start -->
 <section class="navbar">
-    <div class="container">
-        <div class="header__body">
-            <div class="navbar_top">
-                <div class="navbar_logo">
+	<div class="container">
+		<div class="header__body">
+			<div class="navbar_top">
+				<div class="navbar_logo">
 
-                    <a href="{% url 'index'%}">
-                        <img src="{% static 'img/header_Logo.svg'%}" alt="">
-                    </a>
+					<a href="{% url 'index'%}">
+						<img src="{% static 'img/header_Logo.svg'%}" alt="">
+					</a>
 
-                </div>
+				</div>
 
-                <div class="navbar_language">
+				<div class="navbar_language">
 
-                    <a href="{% url 'set_language' %}">
-                            {% get_current_language as LANGUAGE_CODE %}
-                            {% get_available_languages as LANGUAGES %}
-                            {% get_language_info_list for LANGUAGES as languages %}
-                            {% for language in languages %}
-                                   <a href="/{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %} class="navbar_lang-link">
-                                 {{ language.code }}
-                                   </a> {% endfor %}
-                    </a>
-                </div>
+					<a href="{% url 'set_language' %}">
+						{% get_current_language as LANGUAGE_CODE %}
+						{% get_available_languages as LANGUAGES %}
+						{% get_language_info_list for LANGUAGES as languages %}
+						{% for language in languages %}
+						<a href="/{{ language.code }}" {% if language.code==LANGUAGE_CODE %} selected{% endif %}
+							class="navbar_lang-link">
+							{{ language.code }}
+						</a> {% endfor %}
+					</a>
+				</div>
 
-                <div class="navbar_burger">
-                    <span></span>
-                </div>
+				<div class="navbar_burger">
+					<span></span>
+				</div>
 
 
-            </div>
-            <ul class="navbar_nav">
-                <li class="navbar_nav-list">
-                    <a href="{% url 'index'%}" class="navbar_nav-link active">
-                        {%trans 'Басты'%}                    </a>
-                </li>
-                <li class="navbar_nav-list">
-                    <a href="{% url 'news'%}" class="navbar_nav-link">
-                        {%trans 'Жаңалықтар'%}
-                    </a>
-                </li>
-                <li class="navbar_nav-list dropdown">
-                    <a href="{% url 'talapker'%}" class="navbar_nav-link">
-                        {%trans 'Талапкерге'%}
-                        <i class="fas fa-angle-down"></i>
-                    </a>
-                    <span class="hidden"><i class="fas fa-plus"></i></span>
+			</div>
+			<ul class="navbar_nav">
+				<li class="navbar_nav-list">
+					<a href="{% url 'index'%}" class="navbar_nav-link active">
+						{%trans 'Басты'%} </a>
+				</li>
+				<li class="navbar_nav-list">
+					<a href="{% url 'news'%}" class="navbar_nav-link">
+						{%trans 'Жаңалықтар'%}
+					</a>
+				</li>
+				<li class="navbar_nav-list dropdown">
+					<a href="{% url 'talapker'%}" class="navbar_nav-link">
+						{%trans 'Талапкерге'%}
+						<i class="fas fa-angle-down"></i>
+					</a>
+					<span class="hidden"><i class="fas fa-plus"></i></span>
 
-                    <ul class="navbar_sub-nav">
-                        {% for el in dropdown%}
-                        <li class="navbar_sub_nav-list">
-                            <a href="{% url 'talapker_detail'  el.slug %}" class="navbar_sub_nav-link">
-                                {{el.title}}
-                            </a>
-                        </li>
-                        {% endfor%}
-                    </ul>
-                </li>
-                <li class="navbar_nav-list">
-                    <a href="{% url 'about'%}" class="navbar_nav-link">
-                      {% trans 'Біз туралы'%}
-                    </a>
-                </li>
-                <li class="navbar_nav-list dropdown">
-                    <a href="{% url 'student'%}" class="navbar_nav-link">
-                        {%trans 'Студенттерге'%}
-                        <i class="fas fa-angle-down"></i>
-                    </a>
-                    <span class="hidden"><i class="fas fa-plus"></i></span>
+					<ul class="navbar_sub-nav">
+						{% for el in dropdown%}
+						<li class="navbar_sub_nav-list">
+							<a href="{% url 'talapker_detail'  el.slug %}" class="navbar_sub_nav-link">
+								{{el.title}}
+							</a>
+						</li>
+						{% endfor%}
+					</ul>
+				</li>
+				<li class="navbar_nav-list">
+					<a href="{% url 'about'%}" class="navbar_nav-link">
+						{% trans 'Біз туралы'%}
+					</a>
+				</li>
+				<li class="navbar_nav-list dropdown">
+					<a href="{% url 'student'%}" class="navbar_nav-link">
+						{%trans 'Студенттерге'%}
+						<i class="fas fa-angle-down"></i>
+					</a>
+					<span class="hidden"><i class="fas fa-plus"></i></span>
 
-                    <ul class="navbar_sub-nav">
-                        <li class="navbar_sub_nav-list">
-                            <a href="{% url 'student_life'%}" class="navbar_sub_nav-link">
-                                {% trans 'Студенттік өмір'%}
-                            </a>
-                        </li>
-                        <li class="navbar_sub_nav-list">
-                            <a href="{% url 'kodeks'%}" class="navbar_sub_nav-link">
-                                {% trans 'Ар-намыс кодексі'%}
-                            </a>
-                        </li>
-                        <li class="navbar_sub_nav-list">
-                            <a href="{% url 'for_parent'%}">
-                                {%trans 'Ата-аналарға'%}
-                            </a>
-                        </li>
-                        <li class="navbar_sub_nav-list">
-                            <a href="{% url 'clubs'%}" class="navbar_sub_nav-link">
-                               {%trans ' Үйірмелер'%}
-                            </a>
-                        </li>
-                        <li class="navbar_sub_nav-list">
-                            <a href="{% url 'valounter'%}" class="navbar_sub_nav-link">
-                                {%trans 'Еріктілер'%}
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="navbar_nav-list">
-                    <a href="{% url 'gallery'%}" class="navbar_nav-link">
-                        {%trans 'Галерея' %}
-                    </a>
-                </li>
-                <li class="navbar_nav-list">
-                    <a href="{% url 'contact'%}" class="navbar_nav-link">
-                        {%trans 'Байланыс'%}
-                    </a>
-                </li>
-                <li class="navbar_nav-list">
-                    <a href="{% url 'calendar'%}" class="navbar_nav-link">
-                        {%trans 'Күнтізбе'%}
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+					<ul class="navbar_sub-nav">
+						<li class="navbar_sub_nav-list">
+							<a href="{% url 'student_life'%}" class="navbar_sub_nav-link">
+								{% trans 'Студенттік өмір'%}
+							</a>
+						</li>
+						<li class="navbar_sub_nav-list">
+							<a href="{% url 'kodeks'%}" class="navbar_sub_nav-link">
+								{% trans 'Ар-намыс кодексі'%}
+							</a>
+						</li>
+						<li class="navbar_sub_nav-list">
+							<a href="{% url 'for_parent'%}">
+								{%trans 'Ата-аналарға'%}
+							</a>
+						</li>
+						<li class="navbar_sub_nav-list">
+							<a href="{% url 'clubs'%}" class="navbar_sub_nav-link">
+								{%trans ' Үйірмелер'%}
+							</a>
+						</li>
+						<li class="navbar_sub_nav-list">
+							<a href="{% url 'valounter'%}" class="navbar_sub_nav-link">
+								{%trans 'Еріктілер'%}
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="navbar_nav-list">
+					<a href="{% url 'gallery'%}" class="navbar_nav-link">
+						{%trans 'Галерея' %}
+					</a>
+				</li>
+				<li class="navbar_nav-list">
+					<a href="{% url 'contact'%}" class="navbar_nav-link">
+						{%trans 'Байланыс'%}
+					</a>
+				</li>
+				<li class="navbar_nav-list">
+					<a href="{% url 'calendar'%}" class="navbar_nav-link">
+						{%trans 'Күнтізбе'%}
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 </section>
 
 <section class="main_features">
-    <div class="container">
-        <div class="main_features__body">
-            <div class="main_features-title">
-                <h3 class="main_title">
-                    {%trans 'Біздің көзқарастарымыз бен мақсаттарымыз'%}
-                </h3>
-            </div>
-            <div class="main_features_top">
-                <div class="main_features_top-item">
-                    <div class="main_features_text-title text_left">
-                        <h3>{%trans 'Оқу туралы көзқарастар'%}</h3>
-                    </div>
-                    <div class="main_features-text text_left">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        </p>
-                    </div>
-                </div>
-                <div class="main_features_top-item">
-                    <div class="main_features_text-title text_right">
-                        <h3>{%trans 'Басты мақсат'%}</h3>
-                    </div>
-                    <div class="main_features-text text_right">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="main_featurs_icon-list">
-                <div class="main_featurs_icon-item">
-                    <div class="main_featurs_icon">
-                        <img src="../static/img/main_features_icon-1.svg" alt="">
-                    </div>
-                    <div class="main_featurs_icon-text">
-                        <p>{% trans 'Шығармашылық'%}</p>
-                    </div>
-                </div>
-                <div class="main_featurs_icon-item">
-                    <div class="main_featurs_icon">
-                        <img src="../static/img/main_features_icon-2.svg" alt="">
-                    </div>
-                    <div class="main_featurs_icon-text">
-                        <p>{% trans 'Биік мақсаттар'%}</p>
-                    </div>
-                </div>
-                <div class="main_featurs_icon-item">
-                    <div class="main_featurs_icon">
-                        <img src="../static/img/main_features_icon-3.svg" alt="">
-                    </div>
-                    <div class="main_featurs_icon-text">
-                        <p>{% trans "Принциптер мен этика"%}</p>
-                    </div>
-                </div>
-                <div class="main_featurs_icon-item">
-                    <div class="main_featurs_icon">
-                        <img src="../static/img/main_features_icon-4.svg" alt="">
-                    </div>
-                    <div class="main_featurs_icon-text">
-                        <p>{% trans "Бәсекелестік"%}</p>
-                    </div>
-                </div>
-                <div class="main_featurs_icon-item">
-                    <div class="main_featurs_icon">
-                        <img src="../static/img/main_features_icon-5.svg" alt="">
-                    </div>
-                    <div class="main_featurs_icon-text">
-                        <p>{% trans "Таңдауға көмектесу"%}</p>
-                    </div>
-                </div>
-                <div class="main_featurs_icon-item">
-                    <div class="main_featurs_icon">
-                        <img src="../static/img/main_features_icon-6.svg" alt="">
-                    </div>
-                    <div class="main_featurs_icon-text">
-                        <p>{% trans "Әр түрлі оқу орындарының мұғалімдері"%}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="main_features__body">
+			<div class="main_features-title">
+				<h3 class="main_title">
+					{%trans 'Біздің көзқарастарымыз бен мақсаттарымыз'%}
+				</h3>
+			</div>
+			<div class="main_features_top">
+				<div class="main_features_top-item">
+					<div class="main_features_text-title text_left">
+						<h3>{%trans 'Оқу туралы көзқарастар'%}</h3>
+					</div>
+					<div class="main_features-text text_left">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+							et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+							aliquip ex ea commodo consequat. Duis aute irure dolor
+							in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						</p>
+					</div>
+				</div>
+				<div class="main_features_top-item">
+					<div class="main_features_text-title text_right">
+						<h3>{%trans 'Басты мақсат'%}</h3>
+					</div>
+					<div class="main_features-text text_right">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+							et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+							aliquip ex ea commodo consequat. Duis aute irure dolor
+							in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="main_featurs_icon-list">
+				<div class="main_featurs_icon-item">
+					<div class="main_featurs_icon">
+						<img src="../static/img/main_features_icon-1.svg" alt="">
+					</div>
+					<div class="main_featurs_icon-text">
+						<p>{% trans 'Шығармашылық'%}</p>
+					</div>
+				</div>
+				<div class="main_featurs_icon-item">
+					<div class="main_featurs_icon">
+						<img src="../static/img/main_features_icon-2.svg" alt="">
+					</div>
+					<div class="main_featurs_icon-text">
+						<p>{% trans 'Биік мақсаттар'%}</p>
+					</div>
+				</div>
+				<div class="main_featurs_icon-item">
+					<div class="main_featurs_icon">
+						<img src="../static/img/main_features_icon-3.svg" alt="">
+					</div>
+					<div class="main_featurs_icon-text">
+						<p>{% trans "Принциптер мен этика"%}</p>
+					</div>
+				</div>
+				<div class="main_featurs_icon-item">
+					<div class="main_featurs_icon">
+						<img src="../static/img/main_features_icon-4.svg" alt="">
+					</div>
+					<div class="main_featurs_icon-text">
+						<p>{% trans "Бәсекелестік"%}</p>
+					</div>
+				</div>
+				<div class="main_featurs_icon-item">
+					<div class="main_featurs_icon">
+						<img src="../static/img/main_features_icon-5.svg" alt="">
+					</div>
+					<div class="main_featurs_icon-text">
+						<p>{% trans "Таңдауға көмектесу"%}</p>
+					</div>
+				</div>
+				<div class="main_featurs_icon-item">
+					<div class="main_featurs_icon">
+						<img src="../static/img/main_features_icon-6.svg" alt="">
+					</div>
+					<div class="main_featurs_icon-text">
+						<p>{% trans "Әр түрлі оқу орындарының мұғалімдері"%}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <div class="intro">
-    <div class="container">
-        <div class="intro__body">
-            <div class="intro_title">
-                <h3 class="hypertitle">
-                    <a href="">  {%trans 'Жаңалықтар'%}</a>
-                </h3>
-            </div>
-            <div class="intro_sliper-container">
-                <div class="intro_swiper-container">
-                    <div class="swiper swiper_slider-intro">
-                        <div class="swiper-wrapper">
+	<div class="container">
+		<div class="intro__body">
+			<div class="intro_title">
+				<h3 class="hypertitle">
+					<a href=""> {%trans 'Жаңалықтар'%}</a>
+				</h3>
+			</div>
+			<div class="intro_sliper-container">
+				<div class="intro_swiper-container">
+					<div class="swiper swiper_slider-intro">
+						<div class="swiper-wrapper">
 
-                            {% for slide in slider %}
-                            <div class="swiper-slide">
-                                <img src="{{slide.img.url}}" alt="">
-                                <div class="slide-bg"></div>
-                                <a href="{% url 'news'%}" class="swiper-slide-link">{{slide.description}}</a>
-                            </div>
-                            {% endfor %}
-                            <div class="swiper-slide">
-                                <div class="swiper-slide-video">
-                                    <video class="swiper-slide-video-item" controls autoplay loop playsinline muted>
-                                        <source src="{{sliderVideo.video.url}}">
-                                    </video>
-                                </div>
-                            </div>
+							{% for slide in slider %}
+							<div class="swiper-slide">
+								<img src="{{slide.img.url}}" alt="">
+								<div class="slide-bg"></div>
+								<a href="{% url 'news'%}" class="swiper-slide-link">{{slide.description}}</a>
+							</div>
+							{% endfor %}
+							<div class="swiper-slide">
+								<div class="swiper-slide-video">
+									<video class="swiper-slide-video-item" controls autoplay loop playsinline muted>
+										<source src="{{sliderVideo.video.url}}">
+									</video>
+								</div>
+							</div>
 
-                        </div>
-                        <div class="swiper-pagination"></div>
+						</div>
+						<div class="swiper-pagination"></div>
 
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- 
     <div class="news">
@@ -312,77 +317,77 @@
     </div> -->
 
 <div class="features">
-    <div class="container">
-        <div class="features__body">
-            <div class="features_title">
-                <h3 class="hypertitle">
-                    <a href="">{% trans "ТАЛАПКЕРГЕ"%}</a>
-                </h3>
-            </div>
-            <div class="features_row">
-                {%for el in talapker%}
-                <div class="features_card">
+	<div class="container">
+		<div class="features__body">
+			<div class="features_title">
+				<h3 class="hypertitle">
+					<a href="">{% trans "ТАЛАПКЕРГЕ"%}</a>
+				</h3>
+			</div>
+			<div class="features_row">
+				{%for el in talapker%}
+				<div class="features_card">
 
-                    <div class="features_card-img">
-                        <img src="{{el.img.url}}" alt="">
-                    </div>
-                    <div class="features_card-info">
-                        <p> {{el.description}}</p>
-                    </div>
+					<div class="features_card-img">
+						<img src="{{el.img.url}}" alt="">
+					</div>
+					<div class="features_card-info">
+						<p> {{el.description}}</p>
+					</div>
 
-                </div>
-                {%endfor%}
+				</div>
+				{%endfor%}
 
-            </div>
+			</div>
 
-            <!-- <div class="features_button">
+			<!-- <div class="features_button">
                     <a href="{% url 'talapker'%}" class="main_button">
                         Талапкерге
                         <i class="fas fa-chevron-right"></i>
                     </a>
                 </div> -->
-        </div>
-    </div>
+		</div>
+	</div>
 </div>
 {%endblock%}
 <!-- Footer start -->
 {%block footer%}
 <footer class="footer">
-    <div class="container">
-        <div class="footer__body">
-            <div class="footer_logo">
-                <img src="{% static 'img/footer_logo.svg'%}" alt="">
-            </div>
-            <div class="footer_info_block">
-                <div class="footer_info">
-                    <p>{% trans "2020-2021 Жамбыл Инновациялық Жоғары Колледжі"%}</p>
-                </div>
-                <div class="footer_info">
-                    <p>{% trans "ҚР, Жамбыл Облысы, Тараз Қаласы, Пушкин көшесі, 154"%}</p>
-                </div>
-                <div class="footer_info">
-                    <p>{% trans "Колледж қабылдау бөлімінің байланыс телефоны: +77262430713, +77477802727"%}</p>
-                </div>
-            </div>
-            <div class="footer_socials">
-                <div class="footer_icon">
-                    <a href="">
-                        <img src="{% static 'img/facebook_icon.svg'%}" alt="">
-                    </a>
-                </div>
-                <div class="footer_icon">
-                    <a href="">
-                        <img src="{% static 'img/whatsapp_icon.svg'%}" alt="">
-                    </a>
-                </div>
-                <div class="footer_icon">
-                    <a href="">
-                        <img src="{% static 'img/instagram_icon.svg'%}" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="footer__body">
+			<div class="footer_logo">
+				<img src="{% static 'img/footer_logo.svg'%}" alt="">
+			</div>
+			<div class="footer_info_block">
+				<div class="footer_info">
+					<p>{% trans "2020-2021 Жамбыл Инновациялық Жоғары Колледжі"%}</p>
+				</div>
+				<div class="footer_info">
+					<p>{% trans "ҚР, Жамбыл Облысы, Тараз Қаласы, Пушкин көшесі, 154"%}</p>
+				</div>
+				<div class="footer_info">
+					<p>{% trans "Колледж қабылдау бөлімінің байланыс телефоны: +77262430713, +77477802727"%}</p>
+				</div>
+			</div>
+			<div class="footer_socials">
+				<div class="footer_icon">
+					<a href="">
+						<img src="{% static 'img/facebook_icon.svg'%}" alt="">
+					</a>
+				</div>
+				<div class="footer_icon">
+					<a href="">
+						<img src="{% static 'img/whatsapp_icon.svg'%}" alt="">
+					</a>
+				</div>
+				<div class="footer_icon">
+					<a href="">
+						<img src="{% static 'img/instagram_icon.svg'%}" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </footer>
 {%endblock%} {%block script%}
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
