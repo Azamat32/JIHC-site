@@ -4,48 +4,64 @@
 <section class="navbar">
 	<div class="container">
 		<div class="header__body">
+			<div class="navbar_socials">
+				<div class="navbar_socials-item">
+					<a href="" class="navbar_socials-link">
+						<img src="{% static 'img/whatsapp_icon.svg'%}" alt="">
+					</a>
+					<a href="" class="navbar_socials-link">
+						<img src="{% static 'img/facebook_icon.svg'%}" alt="">
+					</a>
+					<a href="" class="navbar_socials-link">
+						<img src="{% static 'img/instagram_icon.svg'%}" alt="">
+					</a>
+				</div>
+				<div class="navbar_socials-item">
+					<p class="navbar_socials-info">
+						+77262430713, +77477802727
+					</p>
+				</div>
+			</div>
 			<div class="navbar_top">
 				<div class="navbar_logo">
-
-					<a href="{% url 'index'%}">
+					<a href="">
 						<img src="{% static 'img/header_Logo.svg'%}" alt="">
 					</a>
-
 				</div>
-
 				<div class="navbar_language">
-
 					<a href="{% url 'set_language' %}">
 						{% get_current_language as LANGUAGE_CODE %}
 						{% get_available_languages as LANGUAGES %}
 						{% get_language_info_list for LANGUAGES as languages %}
 						{% for language in languages %}
-						<a href="/{{ language.code }}" {% if language.code==LANGUAGE_CODE %} selected{% endif %}
-							class="navbar_lang-link">
+						<a href="/{{ language.code }}" class="navbar_lang-link">
 							{{ language.code }}
 						</a> {% endfor %}
 					</a>
 				</div>
-
 				<div class="navbar_burger">
 					<span></span>
 				</div>
-
-
 			</div>
 			<ul class="navbar_nav">
 				<li class="navbar_nav-list">
-					<a href="{% url 'index'%}" class="navbar_nav-link active">
-						{%trans 'Басты'%} </a>
+					<a href="{% url 'index'%}" class="navbar_nav-link ">
+						{%trans 'Басты'%}
+					</a>
 				</li>
 				<li class="navbar_nav-list">
-					<a href="{% url 'news'%}" class="navbar_nav-link">
+					<a href="{% url 'news'%}" class="navbar_nav-link active">
 						{%trans 'Жаңалықтар'%}
+					</a>
+				</li>
+				<li class="navbar_nav-list">
+					<a href="{% url 'about'%}" class="navbar_nav-link">
+						Біз туралы
 					</a>
 				</li>
 				<li class="navbar_nav-list dropdown">
 					<a href="{% url 'talapker'%}" class="navbar_nav-link">
-						{%trans 'Талапкерге'%}
+						Талапкерге
 						<i class="fas fa-angle-down"></i>
 					</a>
 					<span class="hidden"><i class="fas fa-plus"></i></span>
@@ -58,16 +74,12 @@
 							</a>
 						</li>
 						{% endfor%}
+
 					</ul>
-				</li>
-				<li class="navbar_nav-list">
-					<a href="{% url 'about'%}" class="navbar_nav-link">
-						{% trans 'Біз туралы'%}
-					</a>
 				</li>
 				<li class="navbar_nav-list dropdown">
 					<a href="{% url 'student'%}" class="navbar_nav-link">
-						{%trans 'Студенттерге'%}
+						Студенттерге
 						<i class="fas fa-angle-down"></i>
 					</a>
 					<span class="hidden"><i class="fas fa-plus"></i></span>
@@ -75,44 +87,44 @@
 					<ul class="navbar_sub-nav">
 						<li class="navbar_sub_nav-list">
 							<a href="{% url 'student_life'%}" class="navbar_sub_nav-link">
-								{% trans 'Студенттік өмір'%}
+								Студенттік өмір
 							</a>
 						</li>
 						<li class="navbar_sub_nav-list">
 							<a href="{% url 'kodeks'%}" class="navbar_sub_nav-link">
-								{% trans 'Ар-намыс кодексі'%}
+								Ар-намыс кодексі
 							</a>
 						</li>
 						<li class="navbar_sub_nav-list">
 							<a href="{% url 'for_parent'%}">
-								{%trans 'Ата-аналарға'%}
+								Ата-аналарға
 							</a>
 						</li>
 						<li class="navbar_sub_nav-list">
 							<a href="{% url 'clubs'%}" class="navbar_sub_nav-link">
-								{%trans ' Үйірмелер'%}
+								Үйірмелер
 							</a>
 						</li>
 						<li class="navbar_sub_nav-list">
 							<a href="{% url 'valounter'%}" class="navbar_sub_nav-link">
-								{%trans 'Еріктілер'%}
+								Еріктілер
 							</a>
 						</li>
 					</ul>
 				</li>
 				<li class="navbar_nav-list">
 					<a href="{% url 'gallery'%}" class="navbar_nav-link">
-						{%trans 'Галерея' %}
+						Галерея
 					</a>
 				</li>
 				<li class="navbar_nav-list">
 					<a href="{% url 'contact'%}" class="navbar_nav-link">
-						{%trans 'Байланыс'%}
+						Байланыс
 					</a>
 				</li>
 				<li class="navbar_nav-list">
 					<a href="{% url 'calendar'%}" class="navbar_nav-link">
-						{%trans 'Күнтізбе'%}
+						Күнтізбе
 					</a>
 				</li>
 			</ul>
@@ -250,7 +262,7 @@
 		</div>
 	</div>
 </div>
-<!-- 
+<!--
     <div class="news">
         <div class="container">
             <div class="news__body">

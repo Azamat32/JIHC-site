@@ -28,30 +28,43 @@
 	<section class="navbar">
 		<div class="container">
 			<div class="header__body">
+				<div class="navbar_socials">
+					<div class="navbar_socials-item">
+						<a href="" class="navbar_socials-link">
+							<img src="{% static 'img/whatsapp_icon.svg'%}" alt="">
+						</a>
+						<a href="" class="navbar_socials-link">
+							<img src="{% static 'img/facebook_icon.svg'%}" alt="">
+						</a>
+						<a href="" class="navbar_socials-link">
+							<img src="{% static 'img/instagram_icon.svg'%}" alt="">
+						</a>
+					</div>
+					<div class="navbar_socials-item">
+						<p class="navbar_socials-info">
+							+77262430713, +77477802727
+						</p>
+					</div>
+				</div>
 				<div class="navbar_top">
 					<div class="navbar_logo">
-
 						<a href="">
 							<img src="{% static 'img/header_Logo.svg'%}" alt="">
 						</a>
-
 					</div>
-					<div class="navbar_burger">
-						<span></span>
-					</div>
-					<!-- /set_language -->
 					<div class="navbar_language">
-
 						<a href="{% url 'set_language' %}">
 							{% get_current_language as LANGUAGE_CODE %}
 							{% get_available_languages as LANGUAGES %}
 							{% get_language_info_list for LANGUAGES as languages %}
 							{% for language in languages %}
-							<a href="/{{ language.code }}" {% if language.code==LANGUAGE_CODE %} selected{% endif %}
-								class="navbar_lang-link">
+							<a href="/{{ language.code }}" class="navbar_lang-link">
 								{{ language.code }}
 							</a> {% endfor %}
 						</a>
+					</div>
+					<div class="navbar_burger">
+						<span></span>
 					</div>
 				</div>
 				<ul class="navbar_nav">

@@ -3,197 +3,199 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- подключение Css -->
-    <link rel="stylesheet" href="{%static 'css/style.css'%}">
-    <!-- подключение Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
-    <!--подключение Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- подключение Css -->
+	<link rel="stylesheet" href="{%static 'css/style.css'%}">
+	<!-- подключение Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+		integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!--подключение Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@500;600;700&display=swap"
+		rel="stylesheet">
 
-    <title>JIHC offical site</title>
+	<title>JIHC offical site</title>
 </head>
 
 <body>
 
-    <!-- Navbar start -->
-    <section class="navbar">
-        <div class="container">
-            <div class="header__body">
-                <div class="navbar_top">
+	<!-- Navbar start -->
+	<section class="navbar">
+		<div class="container">
+			<div class="header__body">
+				<div class="navbar_top">
 
-                    <div class="navbar_burger">
-                        <span></span>
-                    </div>
-                </div>
-                <ul class="navbar_nav">
-                    <li class="navbar_nav-list">
-                        <a href="{% url 'index'%}" class="navbar_nav-link ">
-                        Басты
-                    </a>
-                    </li>
-                    <li class="navbar_nav-list">
-                        <a href="{% url 'news'%}" class="navbar_nav-link">
-                        Жаңалықтар
-                    </a>
-                    </li>
-                    <li class="navbar_nav-list">
-                        <a href="{% url 'about'%}" class="navbar_nav-link">
-                        Біз туралы
-                    </a>
-                    </li>
-                    <li class="navbar_nav-list dropdown">
-                        <a href="{% url 'talapker'%}" class="navbar_nav-link">
-                        Талапкерге
-                        <i class="fas fa-angle-down"></i>
-                    </a>
-                        <span class="hidden"><i class="fas fa-plus"></i></span>
+					<div class="navbar_burger">
+						<span></span>
+					</div>
+				</div>
+				<ul class="navbar_nav">
+					<li class="navbar_nav-list">
+						<a href="{% url 'index'%}" class="navbar_nav-link ">
+							Басты
+						</a>
+					</li>
+					<li class="navbar_nav-list">
+						<a href="{% url 'news'%}" class="navbar_nav-link">
+							Жаңалықтар
+						</a>
+					</li>
+					<li class="navbar_nav-list">
+						<a href="{% url 'about'%}" class="navbar_nav-link">
+							Біз туралы
+						</a>
+					</li>
+					<li class="navbar_nav-list dropdown">
+						<a href="{% url 'talapker'%}" class="navbar_nav-link">
+							Талапкерге
+							<i class="fas fa-angle-down"></i>
+						</a>
+						<span class="hidden"><i class="fas fa-plus"></i></span>
 
-                        <ul class="navbar_sub-nav">
-                            {% for el in dropdown%}
-                            <li class="navbar_sub_nav-list">
-                                <a href="{% url 'talapker_detail'  el.slug %}" class="navbar_sub_nav-link">
-                                {{el.title}}
-                            </a>
-                            </li>
-                            {% endfor%}
+						<ul class="navbar_sub-nav">
+							{% for el in dropdown%}
+							<li class="navbar_sub_nav-list">
+								<a href="{% url 'talapker_detail'  el.slug %}" class="navbar_sub_nav-link">
+									{{el.title}}
+								</a>
+							</li>
+							{% endfor%}
 
-                        </ul>
-                    </li>
-                    <li class="navbar_nav-list dropdown">
-                        <a href="{% url 'student'%}" class="navbar_nav-link">
-                        Студенттерге
-                        <i class="fas fa-angle-down"></i>
-                    </a>
-                        <span class="hidden"><i class="fas fa-plus"></i></span>
+						</ul>
+					</li>
+					<li class="navbar_nav-list dropdown">
+						<a href="{% url 'student'%}" class="navbar_nav-link">
+							Студенттерге
+							<i class="fas fa-angle-down"></i>
+						</a>
+						<span class="hidden"><i class="fas fa-plus"></i></span>
 
-                        <ul class="navbar_sub-nav">
-                            <li class="navbar_sub_nav-list">
-                                <a href="{% url 'student_life'%}" class="navbar_sub_nav-link">
-                                Студенттік өмір
-                            </a>
-                            </li>
-                            <li class="navbar_sub_nav-list">
-                                <a href="{% url 'kodeks'%}" class="navbar_sub_nav-link">
-                                Ар-намыс кодексі
-                            </a>
-                            </li>
-                            <li class="navbar_sub_nav-list">
-                                <a href="{% url 'for_parent'%}">
-                                Ата-аналарға
-                            </a>
-                            </li>
-                            <li class="navbar_sub_nav-list">
-                                <a href="{% url 'clubs'%}" class="navbar_sub_nav-link">
-                                Үйірмелер
-                            </a>
-                            </li>
-                            <li class="navbar_sub_nav-list">
-                                <a href="{% url 'valounter'%}" class="navbar_sub_nav-link">
-                                Еріктілер
-                            </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="navbar_nav-list">
-                        <a href="{% url 'gallery'%}" class="navbar_nav-link">
-                        Галерея
-                    </a>
-                    </li>
-                    <li class="navbar_nav-list">
-                        <a href="{% url 'contact'%}" class="navbar_nav-link active">
-                        Байланыс
-                    </a>
-                    </li>
-                    <li class="navbar_nav-list">
-                        <a href="{% url 'calendar'%}" class="navbar_nav-link">
-                        Күнтізбе
-                    </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+						<ul class="navbar_sub-nav">
+							<li class="navbar_sub_nav-list">
+								<a href="{% url 'student_life'%}" class="navbar_sub_nav-link">
+									Студенттік өмір
+								</a>
+							</li>
+							<li class="navbar_sub_nav-list">
+								<a href="{% url 'kodeks'%}" class="navbar_sub_nav-link">
+									Ар-намыс кодексі
+								</a>
+							</li>
+							<li class="navbar_sub_nav-list">
+								<a href="{% url 'for_parent'%}">
+									Ата-аналарға
+								</a>
+							</li>
+							<li class="navbar_sub_nav-list">
+								<a href="{% url 'clubs'%}" class="navbar_sub_nav-link">
+									Үйірмелер
+								</a>
+							</li>
+							<li class="navbar_sub_nav-list">
+								<a href="{% url 'valounter'%}" class="navbar_sub_nav-link">
+									Еріктілер
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="navbar_nav-list">
+						<a href="{% url 'gallery'%}" class="navbar_nav-link">
+							Галерея
+						</a>
+					</li>
+					<li class="navbar_nav-list">
+						<a href="{% url 'contact'%}" class="navbar_nav-link active">
+							Байланыс
+						</a>
+					</li>
+					<li class="navbar_nav-list">
+						<a href="{% url 'calendar'%}" class="navbar_nav-link">
+							Күнтізбе
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
 
-    <section class="contact">
-        <div class="container">
-            <div class="contact__body">
-                <div class="contact_title">
-                    <h2>
-                        БАЙЛАНЫС
-                    </h2>
-                </div>
-                <div class="contact_main_block">
-                    <div class="contact_main-list">
-                        <div class="contact_main-item">
-                            <div class="contact_item-title">
-                                <h3>Телефон</h3>
-                            </div>
-                            <div class="contact_item-text">
-                                <a href="tel: +7 707 802 00 88 ">+7 707 802 00 88</a>
-                            </div>
-                        </div>
-                        <div class="contact_main-item">
-                            <div class="contact_item-title">
-                                <h3>Email</h3>
-                            </div>
-                            <div class="contact_item-text">
-                                <a href="mailto: katevktl19@gmail.com ">katevktl19@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact_main-item">
-                            <div class="contact_item-title">
-                                <h3>Мекен-жай</h3>
-                            </div>
-                            <div class="contact_item-text">
-                                <p>Пушкин 154</p>
-                                <a target="_blank" href="https://go.2gis.com/5zlec" class="map_link">
-                                    <i class="fas fa-map-marked-alt"></i>
-                                    на карте 
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact_main-logo">
-                        <img src="{% static 'img/contact_main-logo.svg'%}" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<section class="contact">
+		<div class="container">
+			<div class="contact__body">
+				<div class="contact_title">
+					<h2>
+						БАЙЛАНЫС
+					</h2>
+				</div>
+				<div class="contact_main_block">
+					<div class="contact_main-list">
+						<div class="contact_main-item">
+							<div class="contact_item-title">
+								<h3>Телефон</h3>
+							</div>
+							<div class="contact_item-text">
+								<a href="tel: +7 707 802 00 88 ">+7 707 802 00 88</a>
+							</div>
+						</div>
+						<div class="contact_main-item">
+							<div class="contact_item-title">
+								<h3>Email</h3>
+							</div>
+							<div class="contact_item-text">
+								<a href="mailto: katevktl19@gmail.com ">katevktl19@gmail.com</a>
+							</div>
+						</div>
+						<div class="contact_main-item">
+							<div class="contact_item-title">
+								<h3>Мекен-жай</h3>
+							</div>
+							<div class="contact_item-text">
+								<p>Пушкин 154</p>
+								<a target="_blank" href="https://go.2gis.com/5zlec" class="map_link">
+									<i class="fas fa-map-marked-alt"></i>
+									на карте
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="contact_main-logo">
+						<img src="{% static 'img/contact_main-logo.svg'%}" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <footer class="footer_contact">
-        <div class="footer_contact-container">
-            <div class="footer_contact__body">
-                <div class="footer_contact-item">
-                    <div class="footer_contact-link">
-                        <a href="https://www.instagram.com/jihc.kz/?hl=ru">
-                            <img src="{% static 'img/contac_footer-instagram.svg'%}" alt=""> Instagram
-                        </a>
-                    </div>
-                    <div class="footer_contact-link">
-                        <a href="">
-                            <img src="{% static 'img/contac_footer-gmail.svg'%}" alt=""> Gmail
-                        </a>
-                    </div>
-                    <div class="footer_contact-link">
-                        <a href="">
-                            <img src="{% static 'img/contac_footer-twitter.svg'%}" alt=""> Twitter
-                        </a>
-                    </div>
-                    <div class="footer_contact-link">
-                        <a href="">
-                            <img src="{%static 'img/contac_footer-facebook.svg'%}" alt=""> Facebook
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+	<footer class="footer_contact">
+		<div class="footer_contact-container">
+			<div class="footer_contact__body">
+				<div class="footer_contact-item">
+					<div class="footer_contact-link">
+						<a href="https://www.instagram.com/jihc.kz/?hl=ru">
+							<img src="{% static 'img/contac_footer-instagram.svg'%}" alt=""> Instagram
+						</a>
+					</div>
+					<div class="footer_contact-link">
+						<a href="">
+							<img src="{% static 'img/contac_footer-gmail.svg'%}" alt=""> Gmail
+						</a>
+					</div>
+					<div class="footer_contact-link">
+						<a href="">
+							<img src="{% static 'img/contac_footer-twitter.svg'%}" alt=""> Twitter
+						</a>
+					</div>
+					<div class="footer_contact-link">
+						<a href="">
+							<img src="{%static 'img/contac_footer-facebook.svg'%}" alt=""> Facebook
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 
-    <script src="{%static 'js/script.js'%}"></script>
+	<script src="{%static 'js/script.js'%}"></script>
 </body>
 
 </html>
