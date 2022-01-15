@@ -174,31 +174,6 @@
 	<div class="main_news_wrapper">
 		<div class="container">
 			<div class="main_news_inner">
-				<aside class="main_news_sidebar">
-					<div class="dropbtn">
-						<div class="archive_menu">
-							<button class="btn">
-								<p>Мұрағат</p> <img src="{% static 'img/menu_img.svg'%}">
-							</button>
-							<div id="dropdown" class="menu">
-								<nav class="menu_drop">
-									<li><a href="">Қаңтар 2021</a></li>
-									<li><a href="">Ақпан 2021</a></li>
-									<li><a href="">Наурыз 2021</a></li>
-									<li><a href="">Сәуір 2021</a></li>
-									<li><a href="">Мамыр 2021</a></li>
-									<li><a href="">Маусым 2021</a></li>
-									<li><a href="">Шілде 2021</a></li>
-									<li><a href="">Тамыз 2021</a></li>
-									<li><a href="">Қыркүйек 2021</a></li>
-									<li><a href="">Қазан 2021</a></li>
-									<li><a href="">Қараша 2021</a></li>
-									<li><a href="">Желтоқсан 2021</a></li>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</aside>
 				<div class="main_news_content">
 					{%for el in page.object_list%}
 					<div class="news_single_block">
@@ -254,7 +229,21 @@
 						{%endif%}
 					</div>
 				</div>
+				<aside class="main_news_sidebar">
+					<article class="main_news_article">
+						<h3 class="article__title">Директордың блогы</h3>
+						<div class="acticle__author">
+							<img src="{% static 'img/director_img.jpeg'%}" alt="" class="author-acticle__img">
+							<p class="author-acticle__author">Бодаубеков Алишер Рустамович</p>
 
+							<h2 class="author-acticle__title"></h2>
+							<p class="author-acticle__desc"></p>
+							<div class="author_link">
+								<a href="" class="author-acticle__link">Оқу</a>
+							</div>
+						</div>
+					</article>
+				</aside>
 			</div>
 		</div>
 	</div>
